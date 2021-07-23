@@ -1,0 +1,292 @@
+form {
+  * {
+    outline: none;
+  }
+
+  label.error {
+    display: none !important;
+  }
+
+  .input {
+    padding: 21px 25px 21px 25px;
+    height: 60px;
+    width: 100%;
+    font: 400 15px/1.618em Asap, Arial, Sans-Serif;
+    letter-spacing: .2px;
+    background: transparent;
+    background-position: -20px 22px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    border: 1px solid #D5DBE6;
+    color: #252a37;
+    -webkit-transition: .2s ease-in-out;
+    transition: .2s ease-in-out;
+    -webkit-appearance: none;
+
+    &:valid:not(:focus):not(:placeholder-shown),
+    &:invalid:not(:focus):not(:placeholder-shown),
+    &:invalid:focus:not(:placeholder-shown) {
+      background-repeat: no-repeat;
+      background-position: 15px 22px;
+      background-size: 15px;
+      padding-left: 40px;
+      -webkit-transition: .2s ease-in-out;
+      transition: .2s ease-in-out;
+    }
+
+    &:valid:not(:focus):not(:placeholder-shown) {
+      border-color: #5aad1f;
+    }
+
+    &:invalid:not(:focus):not(:placeholder-shown) {
+      border-color: #E61717;
+      background-size: 13px;
+    }
+
+    &:invalid:focus:not(:placeholder-shown) {
+      padding-left: 25px;
+    }
+
+    &::-webkit-input-placeholder {
+      text-indent: 0px;
+      -webkit-transition: text-indent .2s ease-in-out;
+      transition: text-indent .2s ease-in-out;
+    }
+
+    &::-moz-placeholder {
+      text-indent: 0px;
+      -webkit-transition: text-indent .2s ease-in-out;
+      transition: text-indent .2s ease-in-out;
+    }
+    &:-moz-placeholder {
+      text-indent: 0px;
+      -webkit-transition: text-indent .2s ease-in-out;
+      transition: text-indent .2s ease-in-out;
+    }
+    &:-ms-input-placeholder {
+      text-indent: 0px;
+      -webkit-transition: text-indent .2s ease-in-out;
+      transition: text-indent .2s ease-in-out;
+    }
+    &:hover {
+      border: 1px solid #29c9ff;
+      -webkit-transition: .2s ease-in-out;
+      transition: .2s ease-in-out;
+    }
+    &:focus {
+      background-color: rgba(41, 201, 255, 0.05);
+      border: 1px solid #29c9ff;
+      &::-webkit-input-placeholder {
+        text-indent: -200%;
+        -webkit-transition: text-indent .2s ease-in-out;
+        transition: text-indent .2s ease-in-out;
+      }
+      &::-moz-placeholder {
+        text-indent: -200%;
+        -webkit-transition: text-indent .2s ease-in-out;
+        transition: text-indent .2s ease-in-out;
+      }
+      &:-moz-placeholder {
+        text-indent: -200%;
+        -webkit-transition: text-indent .2s ease-in-out;
+        transition: text-indent .2s ease-in-out;
+      }
+      &:-ms-input-placeholder {
+        text-indent: -200%;
+        -webkit-transition: text-indent .2s ease-in-out;
+        transition: text-indent .2s ease-in-out;
+      }
+    }
+  }
+
+  .input_rounded {
+    -webkit-border-radius: 50px;
+    border-radius: 50px;
+  }
+}
+
+.form-wrapper {
+  // background-image: url(../assets/formbg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: inline-block;
+  margin-bottom: 120px;
+  margin-left: auto;
+  margin-right: auto;
+
+  color: #ffffff;
+
+  .form-info {
+    .form-left {
+      h2 {
+        color: #ffffff;
+      }
+    }
+
+    .form-right {
+      .wpcf7 {
+        form {
+          p > label {
+            margin-top: 15px;
+          }
+
+          p > label > span > input {
+            width: 100%;
+          }
+
+          p > input.wpcf7-submit {
+            width: 50%;
+            margin-left: 25%;
+            margin-right: 25%;
+            background-color: #29c9ff;
+            color: #1B75BC;
+            font-weight: bold;
+            border-width: 1px;
+            border-color: #2255ce;
+            border-radius: 3px;
+          }
+
+          p:nth-child(2) {
+            width: 50%;
+            float: left;
+            padding-right: 10px;
+          }
+
+          p:nth-child(3) {
+            width: 50%;
+            float: right;
+            padding-left: 10px;
+          }
+
+          p:nth-child(4) {
+            width: 50%;
+            float: left;
+            padding-right: 10px;
+            margin-bottom: 15px;
+          }
+
+          p:nth-child(5) {
+            width: 50%;
+            float: right;
+            padding-left: 10px;
+            margin-bottom: 15px;
+          }
+        }
+      }
+    }
+  }
+}
+
+form.wpcf7-form > p {
+  label > span > input.wpcf7-text {
+    border-width: 1px;
+    border-color: #2255ce;
+    border-radius: 3px;
+    padding: 1px 10px 1px 10px;
+    max-width: 100%;
+  }
+
+  label > span > textarea.wpcf7-textarea {
+    border-width: 1px;
+    border-color: #2255ce;
+    border-radius: 3px;
+    padding: 10px;
+    min-width: 100%;
+    max-width: 100%;
+  }
+
+  input.wpcf7-submit {
+    position: static;
+  }
+}
+
+@media (min-width: 768px) {
+  .form-wrapper {
+    border-radius: 10px;
+    width: 90%;
+    margin-left: 5%;
+    margin-right: 5%;
+
+    .form-info {
+      padding: 40px;
+
+      .form-left {
+        width: 40%;
+        float: left;
+        padding: 40px;
+      }
+
+      .form-right {
+        width: 60%;
+        float: right;
+        padding: 40px;
+
+        .wpcf7 {
+          max-width: 500px;
+
+
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 767px) and (min-width: 425px) {
+  .form-wrapper {
+    width: 100%;
+
+
+
+    .form-info {
+
+
+      .form-left {
+        width: 100%;
+        padding: 40px 40px 0px 40px;
+
+      }
+
+      > .form-right {
+        width: 100%;
+        padding: 15px 40px 40px 40px;
+
+
+        .wpcf7 {
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 425px) {
+  .form-wrapper {
+    width: 100%;
+
+
+
+    .form-info {
+
+
+      .form-left {
+        width: 100%;
+        padding: 10px 10px 0px 10px;
+      }
+
+      > .form-right {
+        width: 100%;
+        padding: 10px 10px 10px 10px;
+
+
+        .wpcf7 {
+          max-width: 400px;
+          margin-left: auto;
+          margin-right: auto;
+        }
+      }
+    }
+  }
+}

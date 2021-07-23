@@ -4,18 +4,19 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  Plumb-All's Gatsby WordPress Site
 </h1>
+Didn't like how Wordpress was fairly slow. Decided to make our WordPress installation a headless CMS for speed. Using
+GatsbyJS lets us do this quickly and effectively.
 
 ## 🚀 Quick start
 
-1.  **Create a Gatsby site.**
+1.  **Clone Repo**
 
-    Use the Gatsby CLI to create a new site, specifying the minimal starter.
+    Clone the Repo from GitHub
 
     ```shell
-    # create a new Gatsby site using the minimal starter
-    npm init gatsby
+    git clone https://github.com/DeathCamel58/plumb-all-gatsby.git
     ```
 
 2.  **Start developing.**
@@ -23,32 +24,10 @@
     Navigate into your new site’s directory and start it up.
 
     ```shell
-    cd my-gatsby-site/
+    cd plumb-all-gatsby/
     npm run develop
     ```
 
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
-
-    Edit `src/pages/index.js` to see your site update in real-time!
-
-4.  **Learn more**
-
-    - [Documentation](https://www.gatsbyjs.com/docs/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Tutorials](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Guides](https://www.gatsbyjs.com/tutorial/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [API Reference](https://www.gatsbyjs.com/docs/api-reference/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Plugin Library](https://www.gatsbyjs.com/plugins?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-    - [Cheat Sheet](https://www.gatsbyjs.com/docs/cheat-sheet/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter)
-
-## 🚀 Quick start (Gatsby Cloud)
-
-Deploy this starter with one click on [Gatsby Cloud](https://www.gatsbyjs.com/cloud/):
-
-[<img src="https://www.gatsbyjs.com/deploynow.svg" alt="Deploy to Gatsby Cloud">](https://www.gatsbyjs.com/dashboard/deploynow?url=https://github.com/gatsbyjs/gatsby-starter-minimal)

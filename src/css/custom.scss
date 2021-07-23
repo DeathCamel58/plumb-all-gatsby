@@ -1,0 +1,59 @@
+.fa-tab-col {
+  color: #1B75BC;
+}
+
+table.table-compare {
+  width: 100%;
+}
+
+th.comparison-header {
+  padding: 20px;
+}
+
+td.comparison-cell {
+  padding: 10px;
+}
+
+td.comparison-cell > i.fas {
+  width: 100%;
+  text-align: center;
+}
+
+i.green {
+  color: #00ff00;
+}
+
+i.red {
+  color: #ff0000;
+}
+
+form.wpcf7-form {
+  p {
+    label > span {
+      input.wpcf7-text {
+        border-width: 1px;
+        border-color: #2255ce;
+        border-radius: 13px;
+        padding: 1px 10px 1px 10px;
+        max-width: 100%;
+    }
+
+      textarea.wpcf7-textarea {
+        border-width: 1px;
+        border-color: #2255ce;
+        border-radius: 13px;
+        padding: 10px;
+        min-width: 100%;
+        max-width: 100%;
+    }
+  }
+
+    input.wpcf7-submit {
+      position: static;
+  }
+}
+}
+
+a.button_fullwidth {
+  width: 100%;
+}

@@ -1,0 +1,120 @@
+nav.navbar {
+  height: 80px;
+  background-color: #ffffff !important;
+  padding: 0;
+
+  .header_wrap {
+    height: 100%;
+  }
+
+  nav {
+    height: 80px;
+  }
+
+  .logo_wrap {
+    padding: 0 30px;
+    height: 25px;
+  }
+
+  .flex-end {
+    display: flex;
+    align-content: flex-end;
+    height: 100%;
+  }
+
+  button.navbar-toggler {
+    margin-right: 30px;
+    border: none;
+    padding: 0;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  .estimation {
+    display: flex;
+    align-items: center;
+    border-left: solid 1px #e0e5f0;
+    text-align: center;
+    transition: .2s ease-in-out;
+    transform: translateY(0);
+    padding: 0 30px;
+    width: 350px;
+    justify-content: center;
+
+    a.button {
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      transition: .2s ease-in-out;
+      display: inline-flex;
+      align-items: center;
+      flex-shrink: 0;
+      padding: 12px 36px;
+      height: 40px;
+      border: none;
+      border-radius: 50px;
+      background: #27aae1;
+      color: white;
+      text-decoration: none;
+
+      &:hover {
+        transition: .2s ease-in-out;
+        background: #2190cf;
+      }
+    }
+  }
+
+  .navbar-collapse {
+    .navbar-nav {
+      a {
+        font: 700 15px/1em Gilroy;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        transition: .2s ease-in-out;
+        padding: 41px 20px;
+        color: #0f2762;
+        align-self: center;
+
+        &:hover {
+          font: 700 15px/1em Gilroy;
+          letter-spacing: 2px;
+          text-transform: uppercase;
+          transition: .2s ease-in-out;
+          padding: 41px 20px;
+          color: #29c9ff;
+        }
+      }
+    }
+
+    @media (min-width: 1200px) {
+      justify-content: flex-end;
+    }
+  }
+
+  @media (max-width: 1199px) {
+    .navbar-collapse {
+      transition: none;
+
+      &.show {
+        position: absolute;
+        left: 0;
+        top: 80px;
+        width: 100vw;
+        height: calc(100vh - 80px);
+        background-color: #ffffff;
+        transition: none;
+        justify-content: center;
+      }
+
+      &.collapse:not(.show) {
+        display: none !important;
+      }
+
+      .navbar-nav {
+        flex-direction: column !important;
+        place-self: flex-start;
+      }
+    }
+  }
+}

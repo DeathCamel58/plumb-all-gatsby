@@ -8,6 +8,12 @@ module.exports = {
       resolve: "gatsby-source-wordpress",
       options: {
         url: "https://plumb-all.com/graphql",
+        schema: {
+          typePrefix: 'Wp',
+        },
+        develop: {
+          hardCacheMediaFiles: true,
+        }
       },
     },
     "gatsby-plugin-sass",
