@@ -1,13 +1,13 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://www.yourdomain.tld",
+    siteUrl: "https://plumb-all.com",
     title: "Plumb-All",
   },
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://plumb-all.com/graphql",
+        url: "https://wp.plumb-all.com/graphql",
         schema: {
           typePrefix: 'Wp',
         },
