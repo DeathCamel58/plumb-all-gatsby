@@ -1,0 +1,51 @@
+@import 'common-stuff.scss';
+
+.footer.container-fluid {
+  display: flex;
+  flex-wrap: wrap;
+  padding: 90px;
+  width: 100%;
+  background: #0C2050;
+  color: #ffffff;
+
+  .footer_l {
+    padding: 0;
+
+    .footer_menu {
+      margin: 0 0 2em 0;
+
+      a {
+        text-transform: uppercase;
+      }
+
+      .footer_menu_item {
+        text-decoration: none;
+      }
+    }
+
+    .estimation {
+      @extend %estimation;
+
+      .button {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  .footer_r {
+
+  }
+
+
+  p {
+    color: #7186b7;
+  }
+
+  a {
+    color: #4cd8ff;
+
+    &:hover {
+      color: #2680ff;
+    }
+  }
+}

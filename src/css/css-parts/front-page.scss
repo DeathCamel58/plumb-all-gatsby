@@ -111,12 +111,8 @@ div.top {
         margin-top: 75px;
       }
 
-      p:last-child {
-        margin-top: 15px;
-        visibility: hidden;
-      }
-
       .button-outline-white {
+        margin-top: 15px;
         opacity: 0;
         background: transparent;
         border: solid 2px white;
@@ -130,6 +126,11 @@ div.top {
         text-align: center;
         text-decoration: none;
         line-height: 0.75em;
+
+        &:hover {
+          background: white;
+          color: #0C2050;
+        }
       }
 
       &:hover {
@@ -137,12 +138,8 @@ div.top {
           margin-top: 0;
         }
 
-        > p:last-child {
-          visibility: visible;
-
-          .button-outline-white {
-            opacity: 1;
-          }
+        p .button-outline-white {
+          opacity: 1;
         }
       }
     }
@@ -172,22 +169,30 @@ div.top {
   }
 
   // TODO: Finish Tabs CSS
-  .tab-pane {
+  .tab-pane.active {
     display: flex;
     flex-shrink: 0;
 
     .content-l {
       display: flex;
       width: 35%;
+      max-width: 120px;
       -webkit-box-align: center;
       align-items: center;
       -webkit-box-pack: center;
       justify-content: center;
+      margin-right: 2em;
 
       .icon_bg {
         width: 75%;
-        z-index: 0;
+        z-index: -1;
         vertical-align: middle;
+      }
+
+      i {
+        z-index: 0;
+        position: absolute;
+        font-size: 4em;
       }
     }
   }
@@ -207,5 +212,11 @@ div.top {
   .client-testimonial-carousel {
     padding-right: 10%;
     padding-left: 10%;
+
+    .carousel-item.active {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
   }
 }

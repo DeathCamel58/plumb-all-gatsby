@@ -1,0 +1,28 @@
+%estimation {
+  text-align: center;
+  transition: .2s ease-in-out;
+  transform: translateY(0);
+  padding: 0 30px;
+  justify-content: center;
+
+  a.button {
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: .2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    flex-shrink: 0;
+    padding: 12px 36px;
+    height: 40px;
+    border: none;
+    border-radius: 50px;
+    background: #27aae1;
+    color: white;
+    text-decoration: none;
+
+    &:hover {
+      transition: .2s ease-in-out;
+      background: #2190cf;
+    }
+  }
+}

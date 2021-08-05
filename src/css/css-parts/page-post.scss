@@ -1,0 +1,61 @@
+$primary-color: #2255ce;
+$secondary-color: #29c9ff;
+
+.toprow {
+  height: 400px;
+  background-position: top center;
+  backround-size: cover;
+}
+
+.not-front-page {
+  h1, h2, h3, h4, h5, h6 {
+    color: $primary-color;
+  }
+
+  a {
+    color: $primary-color;
+    text-decoration: none;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      color: $secondary-color;
+    }
+  }
+
+  .icon-wrapper {
+    text-align: center;
+
+    .about-icon {
+      color: $primary-color;
+    }
+  }
+}
+
+.wp-bootstrap-blocks-button {
+  display: table;
+  margin: auto;
+
+  a {
+    box-sizing: border-box;
+    font-size: 1em;
+    padding: 1em 2em;
+    background: $primary-color;
+    color: #ffffff;
+    border: 0;
+    border-radius: 1.5em;
+    text-align: center;
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    line-height: 1em;
+    transition: .2s ease-in-out;
+
+    &:hover {
+      background: lighten($primary-color, 15%);
+    }
+  }
+}
+
+.has-text-align-center {
+  text-align: center;
+}

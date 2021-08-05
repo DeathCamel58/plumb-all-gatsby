@@ -22,9 +22,15 @@ const Layout = ({ isHomePage, children }) => {
 
     return (
         <div className="global-wrapper" data-is-root-path={isHomePage}>
+            {console.log(children)}
+
             <Menu></Menu>
 
-            <div className="page-container" dangerouslySetInnerHTML={{__html: children}}></div>
+            {isHomePage ?
+                <div className="page-container" dangerouslySetInnerHTML={{__html: children}}></div>
+            :
+                <div className="page-container">{children}</div>
+            }
 
             <Footer></Footer>
 

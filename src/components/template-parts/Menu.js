@@ -1,15 +1,19 @@
 import React from "react"
-import { Link, useStaticQuery, graphql } from "gatsby"
+import {Link, useStaticQuery, graphql, StaticQuery} from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import {Container, Nav, Navbar} from "react-bootstrap"
 
+function makeMenuHTML(item) {
+    let html = "<Nav.Link href=\"" + item['url'] + "\" className=\"menu_item\">" + item['label'] + "</Nav.Link>";
+    return html;
+}
+
 const Menu = ({ isHomePage, children }) => {
-    const MainMenu = useStaticQuery(graphql`
+    const wpMenu = useStaticQuery(graphql`
         query PrimaryMenu {
             wpMenu(locations: {eq: PRIMARY}) {
                 menuItems {
                     nodes {
-                        id,
                         url,
                         label
                     }
@@ -33,10 +37,19 @@ const Menu = ({ isHomePage, children }) => {
                     <Navbar.Toggle aria-controls="menu-navigation-menu" className="hamburger_menu" />
                     <Navbar.Collapse id="menu-navigation-menu">
                         <Nav>
-                            <Nav.Link href="https://plumb-all.com" className="menu_item">About Us</Nav.Link>
-                            <Nav.Link href="https://plumb-all.com" className="menu_item">Contact</Nav.Link>
-                            <Nav.Link href="https://plumb-all.com" className="menu_item">Services</Nav.Link>
-                            <Nav.Link href="https://plumb-all.com" className="menu_item">About Us</Nav.Link>
+                            {
+                                wpMenu.wpMenu.menuItems.nodes.map((menuItem, i) => {
+                                    const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
+
+                                    return (
+                                        <Link
+                                            to={menuItem.url}
+                                            className="menu_item">
+                                            {menuItem.label}
+                                        </Link>
+                                    )
+                                })
+                            }
                         </Nav>
                     </Navbar.Collapse>
                     <div className="estimation">

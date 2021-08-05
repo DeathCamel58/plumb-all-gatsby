@@ -1,5 +1,6 @@
 import React from "react"
 import { useStaticQuery, graphql } from "gatsby"
+import { Form } from 'react-bootstrap';
 
 // We're using Gutenberg so we need the block styles
 // import "@wordpress/block-library/build-style/style.css"
@@ -19,7 +20,7 @@ const PageTemplate = () => {
     `)
 
     return (
-        <Layout>
+        <Layout isHomePage>
             {HomePage.wpPage.content}
         </Layout>
     )
