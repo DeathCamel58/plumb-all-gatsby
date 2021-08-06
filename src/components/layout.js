@@ -31,7 +31,10 @@ const Layout = ({ isHomePage, children, pageName }) => {
 
             {console.log(pageName)}
 
-            <div className="page-container">{children}</div>
+            {isHomePage ?
+                <div className="page-container" dangerouslySetInnerHTML={{__html: children}}/> :
+                <div className="page-container">{children}</div>
+            }
 
             <Footer></Footer>
 

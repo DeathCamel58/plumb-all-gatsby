@@ -24,7 +24,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     return (
         <Layout pageName={post.title}>
             <article
-                className="blog-post"
+                className="blog-post not-front-page"
                 itemScope
                 itemType="http://schema.org/Article"
             >
