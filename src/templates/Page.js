@@ -20,7 +20,7 @@ const BlogPageTemplate = ({ data: { post: page } }) => {
     }
 
     return (
-        <Layout>
+        <Layout pageName={page.title}>
             <header>
                 {/* if we have a featured image for this post let's display it */}
                 {featuredImage?.fluid && (
@@ -37,8 +37,6 @@ const BlogPageTemplate = ({ data: { post: page } }) => {
             {!!page.content && (
                 <section className="not-front-page" itemProp="articleBody">{parse(page.content)}</section>
             )}
-
-            <hr />
         </Layout>
     );
 }

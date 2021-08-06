@@ -22,7 +22,7 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
     }
 
     return (
-        <Layout>
+        <Layout pageName={post.title}>
             <article
                 className="blog-post"
                 itemScope
@@ -45,8 +45,6 @@ const BlogPostTemplate = ({ data: { previous, next, post } }) => {
                 {!!post.content && (
                     <section itemProp="articleBody">{parse(post.content)}</section>
                 )}
-
-                <hr />
             </article>
         </Layout>
     );
