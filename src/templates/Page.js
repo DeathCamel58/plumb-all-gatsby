@@ -35,7 +35,9 @@ const BlogPageTemplate = ({ data: { post: page } }) => {
             </header>
 
             {!!page.content && (
-                <section className="not-front-page" itemProp="articleBody">{parse(page.content)}</section>
+                page.title === "Home" ?
+                    <section className="" itemProp="articleBody">{parse(page.content)}</section>:
+                    <section className="not-front-page" itemProp="articleBody">{parse(page.content)}</section>
             )}
         </Layout>
     );
