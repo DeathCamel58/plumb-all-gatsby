@@ -11,18 +11,17 @@ import parse from "html-react-parser"
 // import "../css/@wordpress/block-library/build-style/style.scss"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
-// import Bio from "../components/bio"
 import Layout from "../components/layout"
 // import Seo from "../components/seo"
 
-const BlogPostTemplate = ({ data: { previous, next, post } }) => {
+const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
     const featuredImage = {
         fluid: post.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
         alt: post.featuredImage?.node?.alt || ``,
     }
 
     return (
-        <Layout pageName={post.title}>
+        <Layout pageName={post.title} id={post.id} postOrPage={post} props={`https://plumb-all.com${location.pathname}`}>
             <article
                 className="blog-post not-front-page"
                 itemScope
@@ -66,6 +65,39 @@ export const pageQuery = graphql`query BlogPostById($id: String!) {
                         gatsbyImageData(quality: 100, placeholder: TRACED_SVG, layout: FULL_WIDTH)
                     }
                 }
+            }
+        }
+        seo {
+            canonicalUrl
+            hasProLicense
+            metaDesc
+            metaNewsDisabled
+            metaRobotsArchive
+            metaRobotsImageIndex
+            metaRobotsBreadcrumbs
+            metaRobotsNofollow
+            metaRobotsNoindex
+            metaRobotsOdp
+            metaRobotsPrimaryCategory
+            metaRobotsSnippet
+            metaTitle
+            metaVideo
+            metaVideoDisabled
+            opengraphDescription
+            opengraphTitle
+            opengraphImage {
+                altText
+            }
+            proSchemas
+            proSchemasManual
+            redirectionsEnabled
+            redirectionsType
+            redirectionsURL
+            targetKeywords
+            twitterDescription
+            twitterTitle
+            twitterImage {
+                id
             }
         }
     }

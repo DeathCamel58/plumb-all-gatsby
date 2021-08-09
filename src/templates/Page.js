@@ -13,14 +13,14 @@ import parse from "html-react-parser"
 
 import Layout from "../components/layout"
 
-const BlogPageTemplate = ({ data: { post: page } }) => {
+const BlogPageTemplate = ({ data: { post: page }, location }) => {
     const featuredImage = {
         fluid: page.featuredImage?.node?.localFile?.childImageSharp?.gatsbyImageData,
         alt: page.featuredImage?.node?.alt || ``,
     }
 
     return (
-        <Layout pageName={page.title}>
+        <Layout pageName={page.title} id={page.id} postOrPage={page} props={`https://plumb-all.com${location.pathname}`}>
             <header>
                 {/* if we have a featured image for this post let's display it */}
                 {featuredImage?.fluid && (
@@ -59,6 +59,39 @@ export const pageQuery = graphql`query BlogPageById($id: String!) {
                         gatsbyImageData(quality: 100, placeholder: TRACED_SVG, layout: FULL_WIDTH)
                     }
                 }
+            }
+        }
+        seo {
+            canonicalUrl
+            hasProLicense
+            metaDesc
+            metaNewsDisabled
+            metaRobotsArchive
+            metaRobotsImageIndex
+            metaRobotsBreadcrumbs
+            metaRobotsNofollow
+            metaRobotsNoindex
+            metaRobotsOdp
+            metaRobotsPrimaryCategory
+            metaRobotsSnippet
+            metaTitle
+            metaVideo
+            metaVideoDisabled
+            opengraphDescription
+            opengraphTitle
+            opengraphImage {
+                altText
+            }
+            proSchemas
+            proSchemasManual
+            redirectionsEnabled
+            redirectionsType
+            redirectionsURL
+            targetKeywords
+            twitterDescription
+            twitterTitle
+            twitterImage {
+                id
             }
         }
     }

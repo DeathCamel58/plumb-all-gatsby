@@ -4,8 +4,9 @@ import Menu from "./template-parts/Menu";
 import Footer from "./template-parts/Footer";
 import {Helmet} from "react-helmet";
 import {GatsbyImage} from "gatsby-plugin-image";
+import SEOPress from "./SEOPress";
 
-const Layout = ({ isHomePage, children, pageName }) => {
+const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
     const {
         wp: {
             generalSettings: { title },
@@ -23,13 +24,8 @@ const Layout = ({ isHomePage, children, pageName }) => {
 
     return (
         <div className="global-wrapper" data-is-root-path={isHomePage}>
-            {console.log(children)}
 
             <Menu></Menu>
-
-            {console.log(isHomePage)}
-
-            {console.log(pageName)}
 
             {isHomePage ?
                 <div className="page-container" dangerouslySetInnerHTML={{__html: children}}/> :
@@ -42,6 +38,8 @@ const Layout = ({ isHomePage, children, pageName }) => {
                 <title>{title}{pageName ? ` - ${pageName}` :``}</title>
                 <link key="fontawesome" rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css" crossOrigin="anonymous" />
             </Helmet>
+
+            <SEOPress id={id} props={props} postOrPage={postOrPage} />
         </div>
     )
 }
