@@ -95,6 +95,7 @@ module.exports = {
         }
       `,
         resolveSiteUrl: () => "https://plumb-all.com",
+        output: "/",
         resolvePages: ({
                          allSitePage: { nodes: allPages },
                          allWpContentNode: { nodes: allWpNodes },
