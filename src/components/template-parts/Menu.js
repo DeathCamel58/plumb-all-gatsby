@@ -27,7 +27,7 @@ const Menu = ({ isHomePage, children }) => {
             <Container fluid className="header_lighten header_wrap">
                 <Navbar.Brand href="/" className="logo_wrap">
                     <StaticImage
-                        src="https://plumb-all.com/wp-content/uploads/2018/07/Plumb-All-Primary-Logo-resized.png.webp"
+                        src="https://wp.plumb-all.com/wp-content/uploads/2018/07/Plumb-All-Primary-Logo-resized.png.webp"
                         alt="Plumb-All Logo"
                         className="logo-img"
                         height={25}
