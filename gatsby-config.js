@@ -26,7 +26,21 @@ module.exports = {
     },
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sitemap",
-    "gatsby-plugin-sharp",
+    {
+      resolve: `gatsby-plugin-sharp`,
+      options: {
+        // Defaults used for gatsbyImageData and StaticImage
+        defaults: {},
+        // Set to false to allow builds to continue on image errors
+        failOnError: true,
+        // deprecated options and their defaults:
+        base64Width: 20,
+        forceBase64Format: `png`,
+        useMozJpeg: true,
+        stripMetadata: true,
+        defaultQuality: 70,
+      },
+    },
     "gatsby-transformer-sharp",
     {
       resolve: "gatsby-source-filesystem",
@@ -35,6 +49,18 @@ module.exports = {
         path: "./src/images/",
       },
       __key: "images",
+    },
+    {
+      resolve: `gatsby-plugin-manifest`,
+      options: {
+        name: `Plumb-All`,
+        short_name: `Plumb-All`,
+        start_url: `/`,
+        background_color: `#27aae1`,
+        theme_color: `#27aae1`,
+        display: `minimal-ui`,
+        icon: `src/images/icon.png`,
+      },
     },
     'gatsby-plugin-next-seo',
   ],
