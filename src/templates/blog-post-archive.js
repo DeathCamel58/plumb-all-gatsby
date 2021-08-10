@@ -16,9 +16,17 @@ const BlogIndex = ({
                    }) => {
     const posts = data.allWpPost.nodes
 
+    // Statically define postOrPage to allow the SEO stuff to work
+    const postOrPage = {
+        id: "N/A",
+        title: "News",
+        content: "NEWS",
+        seo: {}
+    }
+
     if (!posts.length) {
         return (
-            <Layout pageName="Blog">
+            <Layout pageName="Blog" postOrPage={postOrPage}>
                 <Row>
                     <Col>
                         <p>
@@ -35,7 +43,7 @@ const BlogIndex = ({
     }
 
     return (
-        <Layout pageName="Blog">
+        <Layout pageName="Blog" postOrPage={postOrPage}>
             <Container className="not-front-page">
                 <Row>
                     <Col>

@@ -17,13 +17,9 @@ import {GatsbyImage} from "gatsby-plugin-image";
 import parse from "html-react-parser";
 import Row from "react-bootstrap/Row";
 
-const SEOPress = ({ id, postOrPage, props }) => {
+const SEOPress = ({ postOrPage, props }) => {
     const post = useStaticQuery(graphql`
-        query page($id: String) {
-            page: wpPage(id: {eq: $id}) {
-                id
-                uri
-            }
+        query page {
             wp {
                 generalSettings {
                     title
@@ -34,16 +30,14 @@ const SEOPress = ({ id, postOrPage, props }) => {
         }`
     )
 
-    const seo = post.page.seo
     const site = post.wp.generalSettings
 
     // console.log(seo)
-    const proSchemasManual = JSON.parse(postOrPage.seo.proSchemasManual)
-    const proSchemas = JSON.parse(postOrPage.seo.proSchemas)
 
     return (
         <>
             <LocalBusinessJsonLd
+                key='Local Business LD'
                 type='LocalBusiness'
                 id='https://plumb-all.com/'
                 name={site.title}
@@ -62,12 +56,13 @@ const SEOPress = ({ id, postOrPage, props }) => {
                     latitude: '33.527213',
                     longitude: '-84.354197',
                 }}
-                images='https://plumb-all.com/wp-content/uploads/2018/08/icon.png'
+                images='https://plumb-all.com/img/icon.png'
             />
             <LogoJsonLd
-                logo='https://plumb-all.com/wp-content/uploads/2018/08/icon.png'
+                logo='https://plumb-all.com/img/icon.png'
                 url='https://plumb-all.com'
             />
+
             <GatsbySeo
                 openGraph={{
                     type: 'website',
@@ -76,21 +71,22 @@ const SEOPress = ({ id, postOrPage, props }) => {
                     description: `${postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''}`,
                     images: [
                         {
-                            url: 'https://www.example.ie/og-image-2.jpg',
+                            url: 'https://plumb-all.com/img/icon.png',
                             width: 800,
                             height: 600,
-                            alt: 'Og Image Alt',
+                            alt: 'Plumb-All Logo',
                         },
                     ],
                 }}
             />
-            <Helmet>
-                {proSchemasManual.map(proSchema => {
-                    let schema = ``
+            {postOrPage.seo.proSchemasManual && postOrPage.seo.proSchemasManual !== "\"\"" ?
+                <Helmet>
+                    {JSON.parse(postOrPage.seo.proSchemasManual).map(proSchema => {
+                        let schema = ``
 
-                    if (proSchema._seopress_pro_rich_snippets_type === 'services') {
-                        schema =
-`{
+                        if (proSchema._seopress_pro_rich_snippets_type === 'services') {
+                            schema =
+                                `{
   "@context": "https://schema.org/",
   "@type": "Service",
   "@id": "${proSchema.canonicalUrl ? proSchema.canonicalUrl : ''}",
@@ -108,23 +104,21 @@ const SEOPress = ({ id, postOrPage, props }) => {
     "telephone": "${proSchema._seopress_pro_rich_snippets_service_tel ? proSchema._seopress_pro_rich_snippets_service_tel : ''}"
   }
 }`
-                    } else {
-                        return ''
-                    }
+                        } else {
+                            return ''
+                        }
 
-                    return (
-                        <script type="application/ld+json">
-                            {schema}
-                        </script>
-                    );
-                })}
-            </Helmet>
+                        return (
+                            <script type="application/ld+json">
+                                {schema}
+                            </script>
+                        );
+                    })}
+                </Helmet>:
+                <meta></meta>
+            }
         </>
     )
-}
-
-SEOPress.propTypes = {
-    id: PropTypes.string.isRequired,
 }
 
 export default SEOPress
