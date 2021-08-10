@@ -95,6 +95,7 @@ module.exports = {
         }
       `,
         resolveSiteUrl: () => "https://plumb-all.com",
+        output: "/",
         resolvePages: ({
                          allSitePage: { nodes: allPages },
                          allWpContentNode: { nodes: allWpNodes },
@@ -155,5 +156,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-next-seo',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://plumb-all.com`,
+        stripQueryString: true,
+      },
+    },
   ],
 };
