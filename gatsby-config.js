@@ -156,5 +156,12 @@ module.exports = {
       },
     },
     'gatsby-plugin-next-seo',
+    {
+      resolve: `gatsby-plugin-canonical-urls`,
+      options: {
+        siteUrl: `https://plumb-all.com`,
+        stripQueryString: true,
+      },
+    },
   ],
 };
