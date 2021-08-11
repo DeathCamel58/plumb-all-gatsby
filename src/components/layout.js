@@ -36,7 +36,7 @@ const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
 
             <Helmet>
                 <title>{title}{pageName ? ` - ${pageName}` :``}</title>
-                <link key="fontawesome" rel="stylesheet" href="	https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.5.0/css/all.css" crossOrigin="anonymous" />
+                <link key="fontawesome" rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.5.0/css/all.css" crossOrigin="anonymous" />
             </Helmet>
 
             <SEOPress props={props} postOrPage={postOrPage} />
