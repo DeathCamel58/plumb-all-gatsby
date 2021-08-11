@@ -1,3 +1,7 @@
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+})
+
 module.exports = {
   siteMetadata: {
     siteUrl: "https://plumb-all.com",
@@ -161,6 +165,14 @@ module.exports = {
       options: {
         siteUrl: `https://plumb-all.com`,
         stripQueryString: true,
+      },
+    },
+    {
+      resolve: `gatsby-source-google-places`,
+      options: {
+        placeIds: ["ChIJA0IpU9H59IgRuuvsTJWBQ1w"],
+        apiKey: process.env.GOOGLE_PLACES_API_KEY,
+        language: "en-US",
       },
     },
   ],

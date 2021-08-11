@@ -25,6 +25,7 @@
     "gatsby-plugin-react-helmet": "^4.11.0",
     "gatsby-plugin-sass": "^4.11.0",
     "gatsby-plugin-sitemap": "^4.7.0",
+    "gatsby-source-google-places": "0.0.9",
     "gatsby-source-wordpress": "^5.11.0",
     "gatsby-transformer-sharp": "^3.11.0",
     "react": "^17.0.1",
