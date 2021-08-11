@@ -1,8 +1,7 @@
 import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
-import {GatsbyImage, StaticImage} from "gatsby-plugin-image"
-import {Container} from "react-bootstrap"
 import parse from "html-react-parser";
+import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 
 const Reviews = ({ isHomePage, children }) => {
