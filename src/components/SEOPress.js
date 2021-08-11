@@ -83,6 +83,7 @@ const SEOPress = ({ postOrPage, props }) => {
                 <Helmet>
                     {JSON.parse(postOrPage.seo.proSchemasManual).map(proSchema => {
                         let schema = ``
+                        let key = ``
 
                         if (proSchema._seopress_pro_rich_snippets_type === 'services') {
                             schema =
@@ -104,12 +105,13 @@ const SEOPress = ({ postOrPage, props }) => {
     "telephone": "${proSchema._seopress_pro_rich_snippets_service_tel ? proSchema._seopress_pro_rich_snippets_service_tel : ''}"
   }
 }`
+                            key = `service-${proSchema._seopress_pro_rich_snippets_service_type ? proSchema._seopress_pro_rich_snippets_service_type : 'noServiceType'}-${proSchema._seopress_pro_rich_snippets_service_name ? proSchema._seopress_pro_rich_snippets_service_name : 'noServiceName'}`
                         } else {
                             return ''
                         }
 
                         return (
-                            <script type="application/ld+json">
+                            <script type="application/ld+json" key={key}>
                                 {schema}
                             </script>
                         );
