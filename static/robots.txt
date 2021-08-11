@@ -1,2 +1,4 @@
+sitemap: https://plumb-all.com/sitemap-index.xml
+
 User-agent: *
 Allow: /
