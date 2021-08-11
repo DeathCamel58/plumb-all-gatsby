@@ -115,13 +115,11 @@ div.top {
 
       @media (max-width: 991px) {
         min-height: 300px;
-        padding: 60px 20px;
+        padding: 20px;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-      }
 
-      @media (max-width: 767px) {
         i {
           margin-top: 0 !important;
         }
@@ -175,6 +173,12 @@ div.top {
   }
 }
 
+.front-page {
+  .container, .container-fluid {
+    margin-top: 3em;
+  }
+}
+
 .software_engineering {
   h2, .sub-h2 {
     text-align: center;
@@ -197,6 +201,10 @@ div.top {
 
       th {
         max-width: 50%;
+
+        a {
+          width: 100%;
+        }
       }
 
       span {

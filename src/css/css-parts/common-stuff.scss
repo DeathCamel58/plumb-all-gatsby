@@ -1,11 +1,5 @@
-%estimation {
-  text-align: center;
-  transition: .2s ease-in-out;
-  transform: translateY(0);
-  padding: 0 30px;
-  justify-content: center;
-
-  a.button {
+%estimationButton {
+  a.button, a.btn, button.btn-primary {
     letter-spacing: 1px;
     text-transform: uppercase;
     transition: .2s ease-in-out;
@@ -25,4 +19,14 @@
       background: #2190cf;
     }
   }
+}
+
+%estimation {
+  text-align: center;
+  transition: .2s ease-in-out;
+  transform: translateY(0);
+  padding: 0 30px;
+  justify-content: center;
+
+  @extend %estimationButton;
 }
