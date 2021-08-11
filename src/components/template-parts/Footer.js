@@ -25,9 +25,8 @@ const Footer = ({ isHomePage, children }) => {
                             {
                                 FooterMenu.wpMenu.menuItems.nodes.map((menuItem, i) => {
                                     return (
-                                        <Col>
+                                        <Col key={menuItem.url}>
                                             <Link
-                                                key={menuItem.url}
                                                 to={menuItem.url}
                                                 className="menu_item footer_menu_item">
                                                 {menuItem.label}
