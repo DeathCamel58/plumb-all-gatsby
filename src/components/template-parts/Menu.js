@@ -43,6 +43,7 @@ const Menu = ({ isHomePage, children }) => {
 
                                     return (
                                         <Link
+                                            key={menuItem.url}
                                             to={menuItem.url}
                                             className="menu_item">
                                             {menuItem.label}
