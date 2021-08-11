@@ -24,7 +24,7 @@ export function onRenderBody(
                         t.src = v;
                         s = b.getElementsByTagName(e)[0];
                         s.parentNode.insertBefore(t, s)
-                    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+                    }(window, document, 'script', '/js/fbevents.js');
                     fbq('init', '194958962316240');
                     fbq('track', "PageView");
                 `,
