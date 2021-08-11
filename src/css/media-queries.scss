@@ -184,14 +184,10 @@
 }
 
 @media (max-width: 767px) {
-  .block {
-    margin-bottom: 60px;
-  }
   .wrap {
     margin: 60px 0 40px 0;
   }
   h1 {
-    margin: 60px 0 0;
     font-size: 50px;
   }
   h2 {
@@ -209,7 +205,7 @@
   }
   body {
     .get_our_media_kit-center {
-      padding-bottom: 120px;
+      //padding-bottom: 120px;
       .media_kit-bg {
         display: none;
       }
@@ -733,10 +729,6 @@
 @media (max-width: 991px) {
   .wrap {
     margin: 80px 0 40px 0;
-  }
-
-  h1 {
-    margin: 80px 0 0;
   }
 
   body .get_our_media_kit-side {

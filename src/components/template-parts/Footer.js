@@ -2,11 +2,6 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import {Col, Container, Nav, Navbar, Row} from "react-bootstrap"
 
-function makeMenuHTML(item) {
-    let html = "<Col><Nav.Link href=\"" + item['url'] + "\" className=\"menu_item\">" + item['label'] + "</Nav.Link></Col>";
-    return html;
-}
-
 const Footer = ({ isHomePage, children }) => {
     const FooterMenu = useStaticQuery(graphql`
         query FooterMenu {
@@ -29,10 +24,8 @@ const Footer = ({ isHomePage, children }) => {
                         <Row className="footer_menu">
                             {
                                 FooterMenu.wpMenu.menuItems.nodes.map((menuItem, i) => {
-                                    const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
-
                                     return (
-                                        <Col>
+                                        <Col key={menuItem.url}>
                                             <Link
                                                 to={menuItem.url}
                                                 className="menu_item footer_menu_item">
@@ -63,7 +56,7 @@ const Footer = ({ isHomePage, children }) => {
                                 <p className="text_color-lilac">
                                     With many plumbing crews out in the field, we can get to your location quickly, so that you can
                                     get your problem fixed ASAP.<br />
-                                    We're located in Jonesboro, Georgia, so we're always nearby.<a href="/privacy-policy/">Privacy Policy</a>
+                                    We're located in Jonesboro, Georgia, so we're always nearby. <Link to={"/privacy-policy"}>Privacy Policy</Link>
                                 </p>
                             </Col>
                         </Row>
