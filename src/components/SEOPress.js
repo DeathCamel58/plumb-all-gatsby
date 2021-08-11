@@ -6,16 +6,10 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
-import {useStaticQuery, graphql, Link} from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 import {LocalBusinessJsonLd, LogoJsonLd} from "gatsby-plugin-next-seo";
 import {GatsbySeo} from "gatsby-plugin-next-seo/src/meta/gatsby-seo";
 import {Helmet} from "react-helmet";
-import Col from "react-bootstrap/Col";
-import Card from "react-bootstrap/Card";
-import {GatsbyImage} from "gatsby-plugin-image";
-import parse from "html-react-parser";
-import Row from "react-bootstrap/Row";
 
 const SEOPress = ({ postOrPage, props }) => {
     const post = useStaticQuery(graphql`

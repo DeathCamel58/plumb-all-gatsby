@@ -1,12 +1,9 @@
 import React from "react"
-import {Link, useStaticQuery, graphql, StaticQuery} from "gatsby"
+import {Link, useStaticQuery, graphql} from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
-import {Container, Nav, Navbar} from "react-bootstrap"
-
-function makeMenuHTML(item) {
-    let html = "<Nav.Link href=\"" + item['url'] + "\" className=\"menu_item\">" + item['label'] + "</Nav.Link>";
-    return html;
-}
+import Container from "react-bootstrap/Container";
+import Nav from "react-bootstrap/Nav";
+import Navbar from "react-bootstrap/Navbar";
 
 const Menu = ({ isHomePage, children }) => {
     const wpMenu = useStaticQuery(graphql`
