@@ -1,6 +1,8 @@
 import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
-import {Col, Container, Nav, Navbar, Row} from "react-bootstrap"
+import Container from "react-bootstrap/Container";
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 
 const Footer = ({ isHomePage, children }) => {
     const FooterMenu = useStaticQuery(graphql`
