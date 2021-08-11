@@ -1,11 +1,9 @@
 import React from "react"
-import {Link, useStaticQuery, graphql, StaticQuery} from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 import {GatsbyImage, StaticImage} from "gatsby-plugin-image"
-import {Container, Nav, Navbar} from "react-bootstrap"
-import Card from "react-bootstrap/Card";
+import {Container} from "react-bootstrap"
 import parse from "html-react-parser";
 import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
 
 const Reviews = ({ isHomePage, children }) => {
     const reviews = useStaticQuery(graphql`
@@ -30,7 +28,8 @@ const Reviews = ({ isHomePage, children }) => {
         <Container fluid className="header_lighten header_wrap">
             {
                 reviews.allGooglePlacesReview.edges.map((review) => {
-                    console.log(review.reviews)
+                    const photo_url = review.reviews.profile_photo_url;
+
                     return (
                         <Row key={review.reviews.id} className="review-item">
                             <div className="card-body">
@@ -46,12 +45,7 @@ const Reviews = ({ isHomePage, children }) => {
                                         </div>
                                     </div>
                                     <div className="user-image">
-                                        <StaticImage
-                                            src={review.reviews.profile_photo_url}
-                                            alt={`${review.reviews.author_name}'s Profile Image`}
-                                            className="rounded-circle"
-                                            width={70}
-                                        />
+                                        <img src={photo_url} alt={`${review.reviews.author_name}'s Profile Image`} className="rounded-circle" width={50} />
                                     </div>
                                 </div>
                             </div>
