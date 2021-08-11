@@ -1,3 +1,5 @@
+@import "common-stuff.scss";
+
 .no-show {
   display: none;
 }
@@ -50,5 +52,7 @@
       width: 100%;
       padding: 15px 40px 40px 40px;
     }
+
+    @extend %estimationButton;
   }
 }
