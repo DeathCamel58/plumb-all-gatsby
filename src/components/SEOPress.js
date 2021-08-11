@@ -63,6 +63,10 @@ const SEOPress = ({ postOrPage, props }) => {
                 url='https://plumb-all.com'
             />
 
+            <Helmet>
+                <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
+            </Helmet>
+
             <GatsbySeo
                 openGraph={{
                     type: 'website',
