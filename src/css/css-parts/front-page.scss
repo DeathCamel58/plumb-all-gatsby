@@ -115,13 +115,11 @@ div.top {
 
       @media (max-width: 991px) {
         min-height: 300px;
-        padding: 60px 20px;
+        padding: 20px;
         -webkit-box-pack: start;
         -ms-flex-pack: start;
         justify-content: flex-start;
-      }
 
-      @media (max-width: 767px) {
         i {
           margin-top: 0 !important;
         }
