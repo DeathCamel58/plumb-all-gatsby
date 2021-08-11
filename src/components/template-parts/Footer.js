@@ -2,11 +2,6 @@ import React from "react"
 import { Link, useStaticQuery, graphql } from "gatsby"
 import {Col, Container, Nav, Navbar, Row} from "react-bootstrap"
 
-function makeMenuHTML(item) {
-    let html = "<Col><Nav.Link href=\"" + item['url'] + "\" className=\"menu_item\">" + item['label'] + "</Nav.Link></Col>";
-    return html;
-}
-
 const Footer = ({ isHomePage, children }) => {
     const FooterMenu = useStaticQuery(graphql`
         query FooterMenu {
@@ -29,10 +24,8 @@ const Footer = ({ isHomePage, children }) => {
                         <Row className="footer_menu">
                             {
                                 FooterMenu.wpMenu.menuItems.nodes.map((menuItem, i) => {
-                                    const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
-
                                     return (
-                                        <Col>
+                                        <Col key={menuItem.url}>
                                             <Link
                                                 to={menuItem.url}
                                                 className="menu_item footer_menu_item">
