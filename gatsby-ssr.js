@@ -37,7 +37,6 @@ export function onRenderBody(
                 `,
                 }}
         />,
-        <!-- begin ClickGUARD Tracking Code -->
         <script defer type="application/javascript" src="https://io.clickguard.com/s/cHJvdGVjdG9y/JAHfDVdP" />,
         <script defer type="application/javascript"
                 dangerouslySetInnerHTML={{
@@ -47,6 +46,5 @@ export function onRenderBody(
                         })();`
                 }}
         />
-        <!-- end ClickGUARD Tracking Code -->
     ]);
 }
