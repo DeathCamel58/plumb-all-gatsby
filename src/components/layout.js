@@ -1,9 +1,8 @@
 import React from "react"
-import {useStaticQuery, graphql, Link} from "gatsby"
+import {useStaticQuery, graphql} from "gatsby"
 import Menu from "./template-parts/Menu";
 import Footer from "./template-parts/Footer";
 import {Helmet} from "react-helmet";
-import {GatsbyImage} from "gatsby-plugin-image";
 import SEOPress from "./SEOPress";
 
 const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
