@@ -8,7 +8,7 @@
     "gatsby"
   ],
   "scripts": {
-    "develop": "gatsby develop",
+    "develop": "gatsby develop -H 0.0.0.0",
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -16,29 +16,29 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.0",
-    "gatsby": "^3.11.1",
-    "gatsby-plugin-canonical-urls": "^3.11.0",
-    "gatsby-plugin-google-gtag": "^3.11.0",
-    "gatsby-plugin-google-tagmanager": "^3.11.0",
-    "gatsby-plugin-manifest": "^3.11.0",
-    "gatsby-plugin-next-seo": "^1.7.0",
-    "gatsby-plugin-react-helmet": "^4.11.0",
-    "gatsby-plugin-sass": "^4.11.0",
-    "gatsby-plugin-sitemap": "^4.7.0",
+    "gatsby": "^3.12.1",
+    "gatsby-plugin-canonical-urls": "^3.12.0",
+    "gatsby-plugin-google-gtag": "^3.12.0",
+    "gatsby-plugin-google-tagmanager": "^3.12.0",
+    "gatsby-plugin-manifest": "^3.12.0",
+    "gatsby-plugin-next-seo": "^1.8.0",
+    "gatsby-plugin-react-helmet": "^4.12.0",
+    "gatsby-plugin-sass": "^4.12.0",
+    "gatsby-plugin-sitemap": "^4.8.0",
     "gatsby-source-google-places": "0.0.9",
-    "gatsby-source-wordpress": "^5.11.0",
-    "gatsby-transformer-sharp": "^3.11.0",
+    "gatsby-source-wordpress": "^5.12.1",
+    "gatsby-transformer-sharp": "^3.12.0",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.1",
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
-    "react-helmet-async": "^1.0.9",
-    "sass": "^1.37.5"
+    "react-helmet-async": "^1.1.2",
+    "sass": "^1.38.2"
   },
   "devDependencies": {
-    "gatsby-plugin-image": "^1.11.0",
-    "gatsby-plugin-sharp": "^3.11.0",
-    "gatsby-source-filesystem": "^3.11.0",
-    "html-react-parser": "^1.2.7"
+    "gatsby-plugin-image": "^1.12.0",
+    "gatsby-plugin-sharp": "^3.12.0",
+    "gatsby-source-filesystem": "^3.12.0",
+    "html-react-parser": "^1.2.8"
   }
 }
