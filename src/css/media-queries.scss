@@ -182,12 +182,6 @@
     transform: translateY(calc(100vh - 100%));
   }
 
-  body .header_wrap .menu_items,
-  body div.header_lighten .menu_items {
-    padding: 0;
-    height: calc(100vh - 200%);
-  }
-
   body .header_wrap nav,
   body div.header_lighten nav {
     height: 60px;
@@ -439,14 +433,6 @@
         }
       }
 
-      .menu_items li > a {
-        color: white;
-
-        &:hover {
-          color: #29c9ff;
-        }
-      }
-
       .estimation {
         visibility: hidden;
         opacity: 0;
@@ -481,89 +467,6 @@
 
     .hamburger_menu {
       display: block;
-
-      &:not(.collapsed) ~ *.menu_items .drop_down-menu {
-        position: relative;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        padding: 0;
-        background: transparent;
-        width: auto;
-        opacity: 1;
-        visibility: visible;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        overflow: hidden;
-      }
-    }
-
-    .menu_items {
-      visibility: hidden;
-      opacity: 0;
-      -webkit-transition: .2s;
-      transition: .2s;
-      position: absolute;
-      background: white;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      -webkit-transform: translateY(-100%);
-      transform: translateY(-100%);
-      height: calc(100vh - 100%);
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-transition: .2s ease-in-out;
-      transition: .2s ease-in-out;
-      z-index: -1;
-
-      li {
-        height: auto;
-        width: 100%;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
-        &.drop_down {
-          background: #f7f9fd;
-
-          > a {
-            display: none;
-          }
-          .drop_down-menu {
-            position: relative;
-            top: 0;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            padding: 0;
-            background: transparent;
-            width: auto;
-            max-height: none;
-            overflow: hidden;
-            z-index: 1;
-          }
-          .menu_l1 {
-            padding: 0;
-            width: 100%;
-            border: none;
-
-            a span {
-              margin-right: 20px;
-            }
-            a:hover span, a.menu_l1-active span {
-              margin-left: 0;
-              margin-right: 20px;
-            }
-            a.menu_l1-active:not(:hover) {
-              color: inherit;
-            }
-          }
-          .menu_l2 {
-            display: none;
-          }
-        }
-      }
     }
   }
   body div.header_lighten {
@@ -573,89 +476,6 @@
 
     .hamburger_menu {
       display: block;
-
-      &:not(.collapsed) ~ *.menu_items .drop_down-menu {
-        position: relative;
-        -webkit-box-shadow: none;
-        box-shadow: none;
-        padding: 0;
-        background: transparent;
-        width: auto;
-        opacity: 1;
-        visibility: visible;
-        -webkit-transform: translateY(0);
-        transform: translateY(0);
-        overflow: hidden;
-      }
-    }
-
-    .menu_items {
-      visibility: hidden;
-      opacity: 0;
-      -webkit-transition: .2s;
-      transition: .2s;
-      position: absolute;
-      background: white;
-      top: 100%;
-      left: 0;
-      width: 100%;
-      -webkit-transform: translateY(-100%);
-      transform: translateY(-100%);
-      height: calc(100vh - 100%);
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-transition: .2s ease-in-out;
-      transition: .2s ease-in-out;
-      z-index: -1;
-
-      li {
-        height: auto;
-        width: 100%;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-
-        &.drop_down {
-          background: #f7f9fd;
-
-          > a {
-            display: none;
-          }
-          .drop_down-menu {
-            position: relative;
-            top: 0;
-            -webkit-box-shadow: none;
-            box-shadow: none;
-            padding: 0;
-            background: transparent;
-            width: auto;
-            max-height: none;
-            overflow: hidden;
-            z-index: 1;
-          }
-          .menu_l1 {
-            padding: 0;
-            width: 100%;
-            border: none;
-
-            a span {
-              margin-right: 20px;
-            }
-            a:hover span, a.menu_l1-active span {
-              margin-left: 0;
-              margin-right: 20px;
-            }
-            a.menu_l1-active:not(:hover) {
-              color: inherit;
-            }
-          }
-          .menu_l2 {
-            display: none;
-          }
-        }
-      }
     }
   }
 }
