@@ -50,12 +50,10 @@
     }
   }
   body .header_wrap .logo_wrap,
-  body:not(.get_estimation) header:hover .logo_wrap,
   body div.header_lighten .logo_wrap {
     padding: 0 15px;
   }
   body .header_wrap .hamburger_menu,
-  body:not(.get_estimation) header:hover .hamburger_menu,
   body div.header_lighten .hamburger_menu {
     width: 65px;
   }
@@ -174,39 +172,33 @@
   }
 
   body .header_wrap .hamburger_menu,
-  body:not(.get_estimation) header:hover .hamburger_menu,
   body div.header_lighten .hamburger_menu {
     width: 85px;
   }
 
   body .header_wrap .hamburger_menu:not(.collapsed) ~ *.estimation,
-  body:not(.get_estimation) header:hover .hamburger_menu:not(.collapsed) ~ *.estimation,
   body div.header_lighten .hamburger_menu:not(.collapsed) ~ *.estimation {
     -webkit-transform: translateY(calc(100vh - 100%));
     transform: translateY(calc(100vh - 100%));
   }
 
   body .header_wrap .menu_items,
-  body:not(.get_estimation) header:hover .menu_items,
   body div.header_lighten .menu_items {
     padding: 0;
     height: calc(100vh - 200%);
   }
 
   body .header_wrap nav,
-  body:not(.get_estimation) header:hover nav,
   body div.header_lighten nav {
     height: 60px;
   }
 
   body .header_wrap .menu_item .drop_down .drop_down-menu,
-  body:not(.get_estimation) header:hover .menu_item .drop_down .drop_down-menu,
   body div.header_lighten .menu_item .drop_down .drop_down-menu {
     max-height: calc(100vh - 60px);
   }
 
   body .header_wrap .estimation,
-  body:not(.get_estimation) header:hover .estimation,
   body div.header_lighten .estimation {
     position: absolute;
     background: #29c9ff;
@@ -381,19 +373,16 @@
   }
 
   body .header_wrap nav,
-  body:not(.get_estimation) header:hover nav,
   body div.header_lighten nav {
     height: 80px;
   }
 
   body .header_wrap .menu_item .drop_down .drop_down-menu,
-  body:not(.get_estimation) header:hover .menu_item .drop_down .drop_down-menu,
   body div.header_lighten .menu_item .drop_down .drop_down-menu {
     max-height: calc(100vh - 80px);
   }
 
   body .header_wrap .estimation,
-  body:not(.get_estimation) header:hover .estimation,
   body div.header_lighten .estimation {
     width: auto;
     padding: 0 30px;
@@ -485,7 +474,6 @@
   }
 
   body .header_wrap,
-  body:not(.get_estimation) header:hover,
   body div.header_lighten {
     -webkit-box-align: start;
     -ms-flex-align: start;
