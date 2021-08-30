@@ -98,3 +98,24 @@ nav.navbar-light {
     }
   }
 }
+
+@media (max-width: 767px) {
+  nav.navbar-light .navbar-collapse.show {
+    ~ .estimation {
+      width: 100%;
+      opacity: 1;
+      visibility: visible;
+      z-index: 1;
+
+      border: none;
+      padding-bottom: 1em;
+      padding-top: 1em;
+      background-color: $secondary-color;
+
+      a {
+        background-color: transparent;
+        font-weight: bold;
+      }
+    }
+  }
+}
