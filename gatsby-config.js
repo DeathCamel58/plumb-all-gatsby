@@ -14,6 +14,9 @@ module.exports = {
         url: "https://wp.plumb-all.com/graphql",
         schema: {
           typePrefix: 'Wp',
+          perPage: 20,
+          requestConcurrency: 5,
+          previewRequestConcurrency: 2,
         },
         develop: {
           hardCacheMediaFiles: true,
