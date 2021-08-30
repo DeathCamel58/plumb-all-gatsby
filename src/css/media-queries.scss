@@ -2,47 +2,6 @@
   h1 {
     font-size: 45px;
   }
-  body {
-    .tabs_slider {
-      .tab_item {
-        padding: 2% 7%;
-      }
-      .content {
-        padding: 30px;
-      }
-      .content-l {
-        width: 100%;
-        height: 220px;
-        .icon_bg {
-          width: 200px;
-        }
-        img {
-          width: 90px;
-        }
-      }
-      .content-r {
-        width: 100%;
-      }
-      .button {
-        display: block;
-        margin-left: auto;
-        margin-right: auto;
-      }
-    }
-    .slider {
-      div[class^='arrow'] {
-        -webkit-transform: scale(0.6);
-        transform: scale(0.6);
-        top: 60px;
-      }
-      div[class^='arrow'].arrow-left {
-        left: 10px;
-      }
-      div[class^='arrow'].arrow-right {
-        right: 10px;
-      }
-    }
-  }
   .top {
     .top_left {
       padding: 18% 12%;
@@ -68,9 +27,6 @@
       }
     }
     .words_from_clients {
-      .slider {
-        margin: 80px -15px 0 -15px;
-      }
       .words_wrap-item {
         padding: 40px 30px;
       }
@@ -90,52 +46,6 @@
       .words_text {
         font-size: 20px;
         line-height: 1.309em;
-      }
-    }
-  }
-  .technologies {
-    .block {
-      margin-bottom: 30px;
-    }
-    .general_info {
-      margin: 0 0 30px;
-    }
-    .image_wrap {
-      margin: 0;
-      width: 200px;
-      height: 200px;
-      .icon_bg {
-        width: 200px;
-      }
-      img {
-        width: 90px;
-      }
-    }
-  }
-  .technologies_basic {
-    .general_info {
-      padding-bottom: 30px;
-    }
-  }
-  .career {
-    .top {
-      .photos_wrap {
-        margin: 30px -5px 0 -5px;
-        height: 400px;
-        .photo_item {
-          border: solid 5px white;
-        }
-      }
-    }
-    .benefits {
-      h2 {
-        margin-bottom: 30px;
-      }
-      .benefits_wrap {
-        .benefits_item {
-          width: 100%;
-          padding: 20px 50px;
-        }
       }
     }
   }
@@ -204,49 +114,6 @@
     }
   }
   body {
-    .get_our_media_kit-center {
-      //padding-bottom: 120px;
-      .media_kit-bg {
-        display: none;
-      }
-    }
-    .get_our_media_kit-side {
-      margin-bottom: 40px;
-      h2 {
-        font-size: 25px;
-        margin: 0 0 20px 0;
-      }
-    }
-    .tabs_slider {
-      padding: 0;
-      margin: 0 -15px;
-      .tab_item {
-        h6 {
-          display: none;
-        }
-      }
-      .content-l {
-        .icon_bg {
-          width: 75%;
-        }
-        img {
-          width: 35%;
-        }
-      }
-    }
-    .slider {
-      div[class^='arrow'] {
-        -webkit-transform: scale(0.7);
-        transform: scale(0.7);
-        top: 80px;
-      }
-      div[class^='arrow'].arrow-left {
-        left: calc(30% - 100px);
-      }
-      div[class^='arrow'].arrow-right {
-        right: calc(30% - 100px);
-      }
-    }
     .other_services {
       display: block;
       & > *:not(:last-child) {
@@ -267,25 +134,6 @@
   }
   .button {
     display: inline-block;
-  }
-  .plumb-all-owl-theme {
-    .item {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      padding: 0 15px;
-    }
-    .item-text {
-      width: auto;
-      font-size: 22px;
-      line-height: 32px;
-      text-align: center;
-      margin-right: 0;
-    }
   }
   .index {
     .wrap {
@@ -317,9 +165,6 @@
       }
     }
     .words_from_clients {
-      .slider {
-        margin-top: 80px;
-      }
       .words_wrap-item {
         padding: 60px;
       }
@@ -368,118 +213,6 @@
         }
       }
     }
-    .get_our_media_kit-center {
-      padding-bottom: 40px;
-    }
-  }
-  .technologies {
-    h1 {
-      margin: 0 auto 20px auto;
-    }
-    h2 {
-      font-size: 25px;
-      margin: 0 0 20px 0;
-    }
-    .block {
-      margin-bottom: 40px;
-    }
-    .general_info {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      margin: 0 0 40px;
-      p {
-        margin-left: 0;
-      }
-    }
-    .image_wrap {
-      margin: 10% 0;
-      width: 75%;
-      -webkit-align-self: center;
-      -ms-flex-item-align: center;
-      -ms-grid-row-align: center;
-      align-self: center;
-      .icon_bg {
-        width: 75%;
-      }
-      img {
-        width: 35%;
-      }
-    }
-    .technologies_links {
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-      padding: 0;
-    }
-  }
-  .technologies_basic {
-    h1 {
-      font-size: 32px;
-      line-height: 1.309em;
-    }
-    .general_info {
-      padding-bottom: 40px;
-    }
-  }
-  .career {
-    .wrap {
-      margin-bottom: 0;
-    }
-    .top {
-      .photos_wrap {
-        margin: 40px -0px 0 -0px;
-        height: 600px;
-        .photo_item {
-          &:nth-child(1) {
-            width: 50%;
-            height: 50%;
-          }
-          &:nth-child(2) {
-            width: 50%;
-            height: calc(50%/5*3);
-            -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-            order: 1;
-          }
-          &:nth-child(3) {
-            width: 50%;
-            height: calc(50%/5*2);
-            -webkit-box-ordinal-group: 2;
-            -ms-flex-order: 1;
-            order: 1;
-          }
-          &:nth-child(4) {
-            width: 50%;
-            height: 50%;
-            -webkit-box-ordinal-group: 3;
-            -ms-flex-order: 2;
-            order: 2;
-          }
-          &:nth-child(5) {
-            width: 50%;
-            height: calc(50%/5*2);
-          }
-          &:nth-child(6) {
-            width: 50%;
-            height: calc(50%/5*3);
-          }
-        }
-      }
-    }
-    .benefits {
-      h2 {
-        margin-bottom: 40px;
-      }
-      .benefits_wrap {
-        margin: -20px 0;
-        .benefits_item {
-          width: calc(100%/2);
-          padding: 20px 15px;
-        }
-      }
-    }
   }
   .contact_us {
     .wrap {
@@ -494,40 +227,6 @@
   .contact_us .send_msg,
   .contact_us .info {
     width: 100%;
-  }
-  .get_estimation {
-    h1 {
-      font-size: 32px;
-      line-height: 1.309em;
-    }
-    .sub-h2 {
-      margin-bottom: 40px;
-    }
-    header {
-      height: 60px;
-    }
-    .estimation_wrap {
-      padding-top: 100px;
-      padding-bottom: 40px;
-      width: 100%;
-    }
-    .form_wrap {
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-      flex-direction: column;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
-      align-items: center;
-      label {
-        &:not(:last-child) {
-          margin-bottom: 20px;
-        }
-      }
-      .button_wrap {
-        margin-top: 20px;
-      }
-    }
   }
   .show-case {
     .show-case_phone {
@@ -565,19 +264,6 @@
         display: -ms-flexbox;
         display: flex;
         margin-right: 0;
-      }
-    }
-    .show-case_technologies {
-      padding: 40px 0;
-      .technologies_links {
-        -ms-flex-wrap: wrap;
-        flex-wrap: wrap;
-        -webkit-box-pack: center;
-        -ms-flex-pack: center;
-        justify-content: center;
-        a {
-          padding-left: 0;
-        }
       }
     }
     .show-case_info {
@@ -731,63 +417,8 @@
     margin: 80px 0 40px 0;
   }
 
-  body .get_our_media_kit-side {
-    margin-bottom: 80px;
-  }
-
-  body .tabs_slider {
-    padding: 0 30px;
-
-    .content-l {
-      .icon_bg {
-        width: 180px;
-      }
-
-      img {
-        width: 90px;
-      }
-    }
-
-    .content-r {
-      h3 {
-        margin: 0 0 10px 0;
-      }
-
-      p {
-        font-size: inherit;
-      }
-    }
-
-    .button {
-      margin-top: 20px;
-    }
-  }
-
-  body .slider div[class^='arrow'].arrow-left {
-    left: calc(50% - 200px);
-  }
-
-  body .slider div[class^='arrow'].arrow-right {
-    right: calc(50% - 200px);
-  }
-
   body .other_services .other_service {
     padding: 30px 10px;
-  }
-
-  .plumb-all-owl-theme {
-    margin-bottom: 30px;
-
-    .owl-dots {
-      padding-left: 0;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-    }
-
-    .item-text {
-      font-size: 40px;
-    }
   }
 
   .index .wrap {
@@ -892,15 +523,6 @@
     }
   }
 
-  .career .top .photos_wrap {
-    margin: 60px 15px 0 15px;
-    height: 300px;
-
-    .photo_item {
-      border: solid 7.5px white;
-    }
-  }
-
   .contact_us .wrap {
     padding-top: 80px;
   }
@@ -908,31 +530,6 @@
   .contact_us p.sub-h2 {
     width: 100%;
     padding: 0 60px;
-  }
-
-  .get_estimation {
-    header {
-      height: 80px;
-
-      .button_wrap {
-        padding-right: 30px;
-      }
-    }
-
-    .estimation_wrap {
-      padding-top: 160px;
-      padding-bottom: 60px;
-      width: 740px;
-    }
-
-    .form_wrap label {
-      width: 200px;
-      padding: 40px;
-    }
-
-    .form_wrap .button_wrap {
-      margin-top: 40px;
-    }
   }
 
   .show-case {
@@ -964,26 +561,6 @@
       display: inline-block;
     }
 
-    .show-case_technologies {
-      height: auto;
-
-      .wrapper {
-        padding-left: 0;
-      }
-
-      h2 {
-        text-align: center;
-      }
-
-      .technologies_links a {
-        padding-left: 20px;
-
-        &:first-child {
-          margin-left: 0;
-        }
-      }
-    }
-
     .show-case_info {
       .show-case_info-row {
         -webkit-box-orient: vertical;
@@ -997,14 +574,6 @@
         width: 100%;
       }
     }
-  }
-
-  .mobile-app-slider .item img {
-    width: 275px;
-  }
-
-  .mobile-app-titles-slider .item img {
-    width: 275px;
   }
 
   .blog_post-date {
@@ -1123,51 +692,6 @@
 }
 
 @media (max-width: 1199px) {
-  body {
-    .get_our_media_kit-side {
-      padding: 30px;
-    }
-  }
-  .plumb-all-owl-theme {
-    .owl-stage {
-      left: 0;
-    }
-    .item {
-      width: auto;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center;
-    }
-  }
-  .technologies {
-    .general_info {
-      margin-right: 20px;
-    }
-    .image_wrap {
-      width: 180px;
-      .icon_bg {
-        width: 180px;
-      }
-      img {
-        width: 90px;
-      }
-    }
-  }
-  .career {
-    .top {
-      .photos_wrap {
-        margin: 80px 50px 0 50px;
-        height: 300px;
-      }
-    }
-  }
-  .get_estimation {
-    header {
-      .button_wrap {
-        padding-right: 60px;
-      }
-    }
-  }
   .show-case {
     .show-case_laptop {
       width: 676px;
@@ -1176,16 +700,6 @@
         position: absolute;
         left: 80px;
         top: 32px;
-      }
-    }
-    .show-case_technologies {
-      .technologies_links {
-        a {
-          width: 107px;
-          &:first-child {
-            margin-left: -13px;
-          }
-        }
       }
     }
   }
