@@ -22,28 +22,29 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
 
     return (
         <Layout pageName={post.title} id={post.id} postOrPage={post} props={`https://plumb-all.com${location.pathname}`}>
+            {/* if we have a featured image for this post let's display it */}
+            {featuredImage?.fluid && (
+                <header>
+                    <GatsbyImage
+                        image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                        alt={post.featuredImage.node.altText}
+                        style={{ marginBottom: 50 }}
+                        className="toprow"/>
+                </header>
+            )}
             <article
                 className="blog-post not-front-page"
                 itemScope
                 itemType="http://schema.org/Article"
             >
-                <header>
-                    <h1 itemProp="headline">{parse(post.title)}</h1>
-
-                    <p>{post.date}</p>
-
-                    {/* if we have a featured image for this post let's display it */}
-                    {featuredImage?.fluid && (
-                        <GatsbyImage
-                            image={featuredImage.gatsbyImageData}
-                            alt={featuredImage.alt}
-                            style={{ marginBottom: 50 }} />
-                    )}
-                </header>
 
                 {!!post.content && (
                     <section itemProp="articleBody">{parse(post.content)}</section>
                 )}
+
+                <br />
+
+                <p>Posted on {post.date}</p>
             </article>
         </Layout>
     );
