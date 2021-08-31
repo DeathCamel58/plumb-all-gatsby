@@ -37,6 +37,14 @@ const Footer = ({ isHomePage, children }) => {
                                     )
                                 })
                             }
+
+                            <Col>
+                                <Link
+                                    to="/news"
+                                    className="menu_item footer_menu_item">
+                                    Blog
+                                </Link>
+                            </Col>
                         </Row>
                         <Row>
                             <Col>
