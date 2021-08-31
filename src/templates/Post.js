@@ -41,6 +41,10 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                 {!!post.content && (
                     <section itemProp="articleBody">{parse(post.content)}</section>
                 )}
+
+                <br />
+
+                <p>Posted on {post.date}</p>
             </article>
         </Layout>
     );
