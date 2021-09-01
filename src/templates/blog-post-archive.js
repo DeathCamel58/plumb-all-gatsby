@@ -9,6 +9,7 @@ import { GatsbyImage } from "gatsby-plugin-image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Container} from "react-bootstrap";
+import {Helmet} from "react-helmet";
 
 const BlogIndex = ({
                        data,
@@ -55,7 +56,7 @@ const BlogIndex = ({
                         </p>
                     </Col>
                 </Row>
-                <Row>
+                <Row data-masonry='{"percentPosition": true }'>
                     {posts.map(post => {
                         const title = post.title
 
@@ -97,6 +98,14 @@ const BlogIndex = ({
                 </>
             )}
             {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+
+            <Helmet>
+                <script
+                    src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+                    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+                    crossOrigin="anonymous" async
+                />
+            </Helmet>
         </Layout>
     );
 }
