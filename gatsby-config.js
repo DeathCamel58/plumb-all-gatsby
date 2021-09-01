@@ -178,5 +178,6 @@ module.exports = {
         language: "en-US",
       },
     },
+    `gatsby-plugin-preact`,
   ],
 };
