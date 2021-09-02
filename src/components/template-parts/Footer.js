@@ -40,7 +40,7 @@ const Footer = ({ isHomePage, children }) => {
 
                             <Col>
                                 <Link
-                                    to="/news"
+                                    to="/news/"
                                     className="menu_item footer_menu_item">
                                     Blog
                                 </Link>
