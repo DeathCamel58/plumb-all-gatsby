@@ -1,6 +1,6 @@
 <p align="center">
   <a href="https://www.gatsbyjs.com/?utm_source=starter&utm_medium=readme&utm_campaign=minimal-starter">
-    <img alt="Gatsby" src="https://www.gatsbyjs.com/Gatsby-Monogram.svg" width="60" />
+    <img alt="Plumb-All" src="https://github.com/DeathCamel58/plumb-all-gatsby/raw/staging/static/img/icon.png" width="60" />
   </a>
 </p>
 <h1 align="center">
@@ -25,6 +25,7 @@ GatsbyJS lets us do this quickly and effectively.
 
     ```shell
     cd plumb-all-gatsby/
+    npm install
     npm run develop
     ```
 
