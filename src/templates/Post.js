@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql } from "gatsby"
+import {graphql, Link} from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image";
 import parse from "html-react-parser"
 
@@ -12,6 +12,8 @@ import parse from "html-react-parser"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
 import Layout from "../components/layout"
+import Col from "react-bootstrap/Col";
+import Row from "react-bootstrap/Row";
 // import Seo from "../components/seo"
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
@@ -42,9 +44,15 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                     <section itemProp="articleBody">{parse(post.content)}</section>
                 )}
 
-                <br />
+                <Row>
+                    <Col>
+                        <Link to="/news">Back to the Blog</Link>
+                    </Col>
+                    <Col>
+                        <p className="text-end">Posted on {post.date}</p>
+                    </Col>
+                </Row>
 
-                <p>Posted on {post.date}</p>
             </article>
         </Layout>
     );
