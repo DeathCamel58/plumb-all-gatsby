@@ -27,7 +27,7 @@ const BlogIndex = ({
 
     if (!posts.length) {
         return (
-            <Layout pageName="Blog" postOrPage={postOrPage}>
+            <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
                 <Row>
                     <Col>
                         <p>
@@ -44,7 +44,7 @@ const BlogIndex = ({
     }
 
     return (
-        <Layout pageName="Blog" postOrPage={postOrPage}>
+        <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
             <Container className="not-front-page">
                 <Row>
                     <Col>
