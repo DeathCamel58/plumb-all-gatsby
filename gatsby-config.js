@@ -170,14 +170,6 @@ module.exports = {
         stripQueryString: true,
       },
     },
-    {
-      resolve: `gatsby-source-google-places`,
-      options: {
-        placeIds: ["ChIJA0IpU9H59IgRuuvsTJWBQ1w"],
-        apiKey: process.env.GOOGLE_PLACES_API_KEY,
-        language: "en-US",
-      },
-    },
     `gatsby-plugin-preact`,
   ],
 };
