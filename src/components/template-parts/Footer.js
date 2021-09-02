@@ -40,7 +40,7 @@ const Footer = ({ isHomePage, children }) => {
 
                             <Col>
                                 <Link
-                                    to="/news"
+                                    to="/news/"
                                     className="menu_item footer_menu_item">
                                     Blog
                                 </Link>
@@ -50,7 +50,7 @@ const Footer = ({ isHomePage, children }) => {
                             <Col>
                                 <div className="estimation">
                                     <a className="button button-cyan button_big" href="tel:+18447586225">(844) PLUMB-ALL</a>
-                                    <p className="text_color-lilac"> Tel:<a className="text_color-cyan" href="tel:+18447586225"> (844)
+                                    <p className="text_color-lilac"> Tel: <a className="text_color-cyan" href="tel:+18447586225">(844)
                                         758-6225</a><br />
                                         Email: <a className="text_color-cyan" href="mailto:info@plumb-all.com">info@plumb-all.com</a></p>
                                 </div>

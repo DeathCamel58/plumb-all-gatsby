@@ -22,12 +22,14 @@ const BlogIndex = ({
         id: "N/A",
         title: "News",
         content: "NEWS",
-        seo: {}
+        seo: {
+            metaDesc: "Here at Plumb-All, we take great pride in educating the public about some plumbing basics. We hope that these blog posts are helpful and informative."
+        }
     }
 
     if (!posts.length) {
         return (
-            <Layout pageName="Blog" postOrPage={postOrPage}>
+            <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
                 <Row>
                     <Col>
                         <p>
@@ -44,7 +46,7 @@ const BlogIndex = ({
     }
 
     return (
-        <Layout pageName="Blog" postOrPage={postOrPage}>
+        <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
             <Container className="not-front-page">
                 <Row>
                     <Col>

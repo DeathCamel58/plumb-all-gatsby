@@ -59,12 +59,13 @@ const SEOPress = ({ postOrPage, props }) => {
 
             <Helmet>
                 <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
+                <meta http-equiv="Content-Type" content="en-us" />
             </Helmet>
 
             <GatsbySeo
                 openGraph={{
                     type: 'website',
-                    url: `${postOrPage.seo.canonicalUrl}`,
+                    url: postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props,
                     title: `${postOrPage.seo.metaTitle ? postOrPage.seo.metaTitle : postOrPage.title}`,
                     description: `${postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''}`,
                     images: [
