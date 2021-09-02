@@ -59,6 +59,7 @@ const SEOPress = ({ postOrPage, props }) => {
 
             <Helmet>
                 <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
+                <meta http-equiv="Content-Type" content="en-us" />
             </Helmet>
 
             <GatsbySeo
