@@ -14,8 +14,8 @@ module.exports = {
         url: "https://wp.plumb-all.com/graphql",
         schema: {
           typePrefix: 'Wp',
-          perPage: 10,
-          requestConcurrency: 2,
+          perPage: 20,
+          requestConcurrency: 5,
           previewRequestConcurrency: 1,
         },
         develop: {
@@ -168,14 +168,6 @@ module.exports = {
       options: {
         siteUrl: `https://plumb-all.com`,
         stripQueryString: true,
-      },
-    },
-    {
-      resolve: `gatsby-source-google-places`,
-      options: {
-        placeIds: ["ChIJA0IpU9H59IgRuuvsTJWBQ1w"],
-        apiKey: process.env.GOOGLE_PLACES_API_KEY,
-        language: "en-US",
       },
     },
     `gatsby-plugin-preact`,
