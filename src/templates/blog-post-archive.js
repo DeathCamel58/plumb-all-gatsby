@@ -22,7 +22,9 @@ const BlogIndex = ({
         id: "N/A",
         title: "News",
         content: "NEWS",
-        seo: {}
+        seo: {
+            metaDesc: "Here at Plumb-All, we take great pride in educating the public about some plumbing basics. We hope that these blog posts are helpful and informative."
+        }
     }
 
     if (!posts.length) {
