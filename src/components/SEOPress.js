@@ -64,7 +64,7 @@ const SEOPress = ({ postOrPage, props }) => {
             <GatsbySeo
                 openGraph={{
                     type: 'website',
-                    url: `${postOrPage.seo.canonicalUrl}`,
+                    url: postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props,
                     title: `${postOrPage.seo.metaTitle ? postOrPage.seo.metaTitle : postOrPage.title}`,
                     description: `${postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''}`,
                     images: [
