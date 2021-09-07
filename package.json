@@ -15,7 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
-    "bootstrap": "^5.1.0",
+    "bootstrap": "^5.1.1",
     "gatsby": "^3.13.0",
     "gatsby-plugin-canonical-urls": "^3.13.0",
     "gatsby-plugin-google-gtag": "^3.13.0",
