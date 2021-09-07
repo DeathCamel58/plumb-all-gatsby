@@ -9,6 +9,9 @@
 Didn't like how Wordpress was fairly slow. Decided to make our WordPress installation a headless CMS for speed. Using
 GatsbyJS lets us do this quickly and effectively.
 
+Deployed versions of this site can be viewed at [Plumb-All](https://plumb-all.com)'s site, and test deployments can be
+viewed by going to a commit's actions, and looking at the Cloudflare Pages preview URL. 
+
 ## 🚀 Quick start
 
 1.  **Clone Repo**
