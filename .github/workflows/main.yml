@@ -2,9 +2,10 @@ on: push
 name: 🚀 Deploy to preview server on push
 jobs:
   preview-server-deploy:
-    name: 🎉 Deploy
+    name: 🎉 Deploy to Preview Server!
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Set up SSH
         run: |
           mkdir -p ~/.ssh/
@@ -17,10 +18,7 @@ jobs:
           SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
 
       - name: Install PM2
-        run: npm i pm2
-
-      - name: Replace Variables in `ecosystem.config.js`
-        run: envsubst < ecosystem.config.js > ecosystem.config.js
+        run: npm i -g pm2
 
       - name: Setup Remote Preview Server
         run: pm2 deploy ecosystem.config.js development setup

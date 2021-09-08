@@ -23,9 +23,9 @@ module.exports = {
     deploy: {
         development: {
             "key": "deploy.pem",
-            "user": "${FTP_USERNAME}",
-            "host": "${FTP_HOST}",
-            "ref": "origin/master",
+            "user": "root",
+            "host": "ftp.preview-wp.plumb-all.com",
+            "ref": "origin/staging",
             "repo": "https://github.com/DeathCamel58/plumb-all-gatsby.git",
             "path": "/root/plumb-all-gatsby",
             "post-deploy" : "pm2 startOrRestart ecosystem.json --env production"
