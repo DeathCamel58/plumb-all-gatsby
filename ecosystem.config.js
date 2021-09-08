@@ -18,7 +18,8 @@ module.exports = {
             ".cache",
             "schema.graphql",
             "public",
-            ".wordpress-cache"
+            ".wordpress-cache",
+            ".git"
         ]
     }],
 
