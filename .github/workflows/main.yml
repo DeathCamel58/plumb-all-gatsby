@@ -20,8 +20,5 @@ jobs:
       - name: Install PM2
         run: npm i -g pm2
 
-      - name: Setup Remote Preview Server
-        run: pm2 deploy ecosystem.config.js development setup
-
       - name: Deploy
         run: pm2 deploy ecosystem.config.js development
