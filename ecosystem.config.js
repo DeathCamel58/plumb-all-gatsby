@@ -28,7 +28,7 @@ module.exports = {
             "ref": "origin/staging",
             "repo": "https://github.com/DeathCamel58/plumb-all-gatsby.git",
             "path": "/root/plumb-all-gatsby",
-            "post-deploy" : "pm2 startOrRestart ecosystem.json --env production"
+            "post-deploy" : "pm2 startOrRestart ecosystem.config.js --env production"
         }
     }
 }
