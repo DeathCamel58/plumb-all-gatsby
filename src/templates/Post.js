@@ -46,7 +46,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
 
                 <Row>
                     <Col>
-                        <Link to="/news">Back to the Blog</Link>
+                        <Link to="/news/">Back to the Blog</Link>
                     </Col>
                     <Col>
                         <p className="text-end">Posted on {post.date}</p>
