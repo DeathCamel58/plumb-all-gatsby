@@ -11,16 +11,7 @@ module.exports = {
             ENABLE_GATSBY_REFRESH_ENDPOINT: "true"
         },
         autorestart: true,
-        watch: true,
-        watch_delay: 1000,
-        ignore_watch: [
-            "node_modules",
-            ".cache",
-            "schema.graphql",
-            "public",
-            ".wordpress-cache",
-            ".git"
-        ]
+        watch: false
     }],
 
     // Deployment to server configuration
