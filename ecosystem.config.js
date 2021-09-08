@@ -1,7 +1,8 @@
 module.exports = {
     apps : [{
         name   : "preview-wp-plumb-all",
-        script : "./app.js",
+        script : "npm",
+        args : "start",
         env_production: {
             NODE_ENV : "production"
         },
