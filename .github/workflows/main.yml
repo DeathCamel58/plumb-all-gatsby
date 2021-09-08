@@ -1,0 +1,29 @@
+on: push
+name: 🚀 Deploy to preview server on push
+jobs:
+  preview-server-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Set up SSH
+        run: |
+          mkdir -p ~/.ssh/
+          echo "$SSH_PRIVATE_KEY" > ./deploy.pem
+          sudo chmod 600 ./deploy.pem
+          echo "$SSH_KNOWN_HOSTS" > ~/.ssh/known_hosts
+        shell: bash
+        env:
+          SSH_PRIVATE_KEY: ${{secrets.SSH_PRIVATE_KEY}}
+          SSH_KNOWN_HOSTS: ${{secrets.SSH_KNOWN_HOSTS}}
+
+      - name: Install PM2
+        run: npm i pm2
+
+      - name: Replace Variables in `ecosystem.config.js`
+        run: envsubst < ecosystem.config.js > ecosystem.config.js
+
+      - name: Setup Remote Preview Server
+        run: pm2 deploy ecosystem.config.js development setup
+
+      - name: Deploy
+        run: pm2 deploy ecosystem.config.js development
