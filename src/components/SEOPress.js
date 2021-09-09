@@ -78,7 +78,7 @@ const SEOPress = ({ postOrPage, props }) => {
                     ],
                 }}
             />
-            {postOrPage.seo.proSchemasManual && postOrPage.seo.proSchemasManual !== "\"\"" ?
+            {postOrPage.seo.proSchemasManual && postOrPage.seo.proSchemasManual !== "\"\"" && postOrPage.seo.proSchemasManual !== "{\"_seopress_pro_rich_snippets_type\":\"none\"}"?
                 <Helmet>
                     {JSON.parse(postOrPage.seo.proSchemasManual).map(proSchema => {
                         let schema = ``
