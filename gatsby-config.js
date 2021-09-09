@@ -4,14 +4,14 @@ require("dotenv").config({
 
 module.exports = {
   siteMetadata: {
-    siteUrl: "https://plumb-all.com",
+    siteUrl: process.env.siteUrl || "https://plumb-all.com",
     title: "Plumb-All",
   },
   plugins: [
     {
       resolve: "gatsby-source-wordpress",
       options: {
-        url: "https://wp.plumb-all.com/graphql",
+        url: process.env.wordpressUrl || "https://wp.plumb-all.com/graphql",
         schema: {
           typePrefix: 'Wp',
           perPage: 20,
@@ -101,7 +101,7 @@ module.exports = {
           }
         }
       `,
-        resolveSiteUrl: () => "https://plumb-all.com",
+        resolveSiteUrl: () => process.env.siteUrl || "https://plumb-all.com",
         output: "/",
         resolvePages: ({
                          allSitePage: { nodes: allPages },
@@ -166,7 +166,7 @@ module.exports = {
     {
       resolve: `gatsby-plugin-canonical-urls`,
       options: {
-        siteUrl: `https://plumb-all.com`,
+        siteUrl: process.env.siteUrl || `https://plumb-all.com`,
         stripQueryString: true,
       },
     },
