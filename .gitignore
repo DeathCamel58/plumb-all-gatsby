@@ -4,3 +4,4 @@ public
 .idea/
 .wordpress-cache/
 schema.graphql
+deploy.pem
