@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.1",
-    "gatsby": "^3.13.1",
+    "gatsby": "^3.14.0",
     "gatsby-plugin-canonical-urls": "^3.13.0",
     "gatsby-plugin-google-gtag": "^3.13.0",
     "gatsby-plugin-google-tagmanager": "^3.13.0",
