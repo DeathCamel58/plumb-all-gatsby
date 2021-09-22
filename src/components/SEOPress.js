@@ -120,7 +120,7 @@ const SEOPress = ({ postOrPage, props }) => {
                         );
                     })}
                 </Helmet>:
-                <meta></meta>
+                null
             }
         </>
     )
