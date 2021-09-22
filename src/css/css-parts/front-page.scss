@@ -1,3 +1,5 @@
+@import "common-stuff.scss";
+
 div.top {
   display: flex;
   -webkit-box-orient: horizontal;
@@ -50,23 +52,7 @@ div.top {
     }
 
     .button-outline-white {
-      background: transparent;
-      border: solid 2px white;
-      color: white;
-      transition: .2s ease-in-out;
-      display: inline-flex;
-      flex-shrink: 0;
-      padding: 12px 36px;
-      height: 40px;
-      border-radius: 50px;
-      text-align: center;
-      text-decoration: none;
-      line-height: 0.75em;
-
-      &:hover {
-        background: white;
-        color: #0C2050;
-      }
+      @extend %button-outline-white;
     }
   }
 
@@ -141,23 +127,8 @@ div.top {
       .button-outline-white {
         margin-top: 15px;
         opacity: 0;
-        background: transparent;
-        border: solid 2px white;
-        color: white;
-        transition: .2s ease-in-out;
-        display: inline-flex;
-        flex-shrink: 0;
-        padding: 12px 36px;
-        height: 40px;
-        border-radius: 50px;
-        text-align: center;
-        text-decoration: none;
-        line-height: 0.75em;
 
-        &:hover {
-          background: white;
-          color: #0C2050;
-        }
+        @extend %button-outline-white;
       }
 
       &:hover {
