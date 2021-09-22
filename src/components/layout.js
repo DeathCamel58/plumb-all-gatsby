@@ -24,14 +24,14 @@ const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
     return (
         <div className="global-wrapper" data-is-root-path={isHomePage}>
 
-            <Menu></Menu>
+            <Menu />
 
             {isHomePage ?
                 <div className="page-container" dangerouslySetInnerHTML={{__html: children}}/> :
                 <div className="page-container">{children}</div>
             }
 
-            <Footer></Footer>
+            <Footer />
 
             <Helmet>
                 <title>{title}{pageName ? ` - ${pageName}` :``}</title>
