@@ -26,6 +26,10 @@ const SEOPress = ({ postOrPage, props }) => {
 
     const site = post.wp.generalSettings
 
+    if (postOrPage === '404') {
+        return null
+    }
+
     // console.log(seo)
 
     return (
