@@ -48,23 +48,23 @@ form {
     }
 
     &::-webkit-input-placeholder {
-      text-indent: 0px;
+      text-indent: 0;
       -webkit-transition: text-indent .2s ease-in-out;
       transition: text-indent .2s ease-in-out;
     }
 
     &::-moz-placeholder {
-      text-indent: 0px;
+      text-indent: 0;
       -webkit-transition: text-indent .2s ease-in-out;
       transition: text-indent .2s ease-in-out;
     }
     &:-moz-placeholder {
-      text-indent: 0px;
+      text-indent: 0;
       -webkit-transition: text-indent .2s ease-in-out;
       transition: text-indent .2s ease-in-out;
     }
     &:-ms-input-placeholder {
-      text-indent: 0px;
+      text-indent: 0;
       -webkit-transition: text-indent .2s ease-in-out;
       transition: text-indent .2s ease-in-out;
     }
@@ -242,7 +242,7 @@ form.wpcf7-form > p {
 
       .form-left {
         width: 100%;
-        padding: 40px 40px 0px 40px;
+        padding: 40px 40px 0 40px;
 
       }
 
@@ -272,7 +272,7 @@ form.wpcf7-form > p {
 
       .form-left {
         width: 100%;
-        padding: 10px 10px 0px 10px;
+        padding: 10px 10px 0 10px;
       }
 
       > .form-right {
