@@ -26,6 +26,10 @@ const SEOPress = ({ postOrPage, props }) => {
 
     const site = post.wp.generalSettings
 
+    if (postOrPage === '404') {
+        return null
+    }
+
     // console.log(seo)
 
     return (
@@ -116,7 +120,7 @@ const SEOPress = ({ postOrPage, props }) => {
                         );
                     })}
                 </Helmet>:
-                <meta></meta>
+                null
             }
         </>
     )
