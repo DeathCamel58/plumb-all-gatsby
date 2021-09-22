@@ -31,5 +31,25 @@
   @extend %estimationButton;
 }
 
+%button-outline-white {
+  background: transparent;
+  border: solid 2px white;
+  color: white;
+  transition: .2s ease-in-out;
+  display: inline-flex;
+  flex-shrink: 0;
+  padding: 12px 36px;
+  height: 40px;
+  border-radius: 50px;
+  text-align: center;
+  text-decoration: none;
+  line-height: 0.75em;
+
+  &:hover {
+    background: white;
+    color: #0C2050;
+  }
+}
+
 $primary-color: #2255ce;
 $secondary-color: #29c9ff;
