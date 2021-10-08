@@ -11,7 +11,7 @@ import {LocalBusinessJsonLd, LogoJsonLd} from "gatsby-plugin-next-seo";
 import {GatsbySeo} from "gatsby-plugin-next-seo/src/meta/gatsby-seo";
 import {Helmet} from "react-helmet";
 
-const SEOPress = ({ postOrPage, props }) => {
+const SEOPress = ({ postOrPage, props, title }) => {
     const post = useStaticQuery(graphql`
         query page {
             wp {
@@ -27,7 +27,12 @@ const SEOPress = ({ postOrPage, props }) => {
     const site = post.wp.generalSettings
 
     if (postOrPage === '404') {
-        return null
+        return (
+            <GatsbySeo
+                title={`${title}`}
+                description={`404 - This page does not exist.`}
+            />
+        )
     }
 
     // console.log(seo)
@@ -61,8 +66,12 @@ const SEOPress = ({ postOrPage, props }) => {
                 url='https://plumb-all.com'
             />
 
+            <GatsbySeo
+                title={`${title}`}
+                description={`${postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''}`}
+            />
+
             <Helmet>
-                <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
                 <meta http-equiv="Content-Type" content="en-us" />
             </Helmet>
 

@@ -8,8 +8,6 @@ const NotFoundPage = () => {
   return (
     <Layout postOrPage={'404'} pageName={'404 - Not Found'}>
       <section className="not-front-page" itemProp="articleBody">
-
-        <title>Not Found</title>
         <h1>Page not found</h1>
         <p>Sorry, we couldn't find what you're looking for.</p>
 
