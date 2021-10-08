@@ -34,11 +34,10 @@ const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
             <Footer />
 
             <Helmet>
-                <title>{title}{pageName ? ` - ${pageName}` :``}</title>
                 <link key="fontawesome" rel="stylesheet" href="https://unpkg.com/@fortawesome/fontawesome-free@5.15.4/css/all.css" crossOrigin="anonymous" />
             </Helmet>
 
-            <SEOPress props={props} postOrPage={postOrPage} />
+            <SEOPress props={props} postOrPage={postOrPage} title={`${title}${pageName ? ' - ' + pageName : ''}`} />
         </div>
     )
 }
