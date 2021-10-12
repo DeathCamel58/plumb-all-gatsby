@@ -26,7 +26,7 @@
     "gatsby-plugin-sitemap": "next",
     "gatsby-source-wordpress": "next",
     "gatsby-transformer-sharp": "next",
-    "preact": "^10.5.14",
+    "preact": "^10.5.15",
     "preact-render-to-string": "^5.1.19",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.4",
