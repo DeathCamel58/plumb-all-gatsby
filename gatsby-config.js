@@ -162,14 +162,6 @@ module.exports = {
         icon: `src/images/icon.png`,
       },
     },
-    'gatsby-plugin-next-seo',
-    {
-      resolve: `gatsby-plugin-canonical-urls`,
-      options: {
-        siteUrl: process.env.siteUrl || `https://plumb-all.com`,
-        stripQueryString: true,
-      },
-    },
     `gatsby-plugin-preact`,
   ],
 };
