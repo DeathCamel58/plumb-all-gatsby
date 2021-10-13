@@ -11,7 +11,6 @@ const PageTemplate = (location) => {
                 content
                 seo {
                     canonicalUrl
-                    hasProLicense
                     metaDesc
                     metaNewsDisabled
                     metaRobotsArchive
