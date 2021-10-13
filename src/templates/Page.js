@@ -63,7 +63,6 @@ export const pageQuery = graphql`query BlogPageById($id: String!) {
         }
         seo {
             canonicalUrl
-            hasProLicense
             metaDesc
             metaNewsDisabled
             metaRobotsArchive
