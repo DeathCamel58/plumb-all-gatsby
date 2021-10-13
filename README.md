@@ -35,3 +35,10 @@ viewed by going to a commit's actions, and looking at the Cloudflare Pages previ
 3.  **Open the code and start customizing!**
 
     Your site is now running at http://localhost:8000!
+
+## Backend WordPress Requirements
+This gatsby theme *requires* both the WPGraphQL plugin and the
+[WPGraphQL for SEOPress](https://github.com/moonmeister/wp-graphql-seopress) plugin.
+
+Furthermore, because I maintain WPGraphQL for SEOPress, this gatsby theme may at times rely on my development branch of
+the plugin (which I update for this theme), which can be found here: [DeathCamel58/wp-graphql-seopress](https://github.com/DeathCamel58/wp-graphql-seopress/)
