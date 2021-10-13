@@ -7,6 +7,10 @@ export function onRenderBody(
     if (process.env.NODE_ENV === `production`) {
         setHeadComponents([
             <script
+                key="google-optimize"
+                src="https://www.googleoptimize.com/optimize.js?id=OPT-MH4QC29"
+            />,
+            <script
                 key="facebook-tracking-events"
                 dangerouslySetInnerHTML={{
                     __html: `
