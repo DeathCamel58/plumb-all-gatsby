@@ -26,28 +26,6 @@ module.exports = {
     "gatsby-plugin-sass",
     "gatsby-plugin-image",
     {
-      resolve: `gatsby-plugin-google-gtag`,
-      options: {
-        // trackingIds: [
-        //   "UA-124176321-1", // Google Analytics / GA
-        // ],
-        // This object gets passed directly to the gtag config command
-        // This config will be shared across all trackingIds
-        gtagConfig: {
-          optimize_id: "OPT-MH4QC29",
-          anonymize_ip: false,
-          cookie_expires: 0,
-        },
-        // This object is used for configuration specific to this plugin
-        pluginConfig: {
-          // Puts tracking script in the head instead of the body
-          head: false,
-          // Setting this parameter is also optional
-          respectDNT: false,
-        },
-      },
-    },
-    {
       resolve: "gatsby-plugin-google-tagmanager",
       options: {
         id: "GTM-M48PNMP",
@@ -55,7 +33,7 @@ module.exports = {
         // Include GTM in development.
         //
         // Defaults to false meaning GTM will only be loaded in production.
-        includeInDevelopment: false,
+        includeInDevelopment: true,
 
         // datalayer to be set before GTM is loaded
         // should be an object or a function that is executed in the browser
