@@ -141,8 +141,6 @@ const SEOPress = ({ postOrPage, props, title }) => {
         )
     }
 
-    console.log(siteSEO);
-
     return (
         <>
             <Helmet>
