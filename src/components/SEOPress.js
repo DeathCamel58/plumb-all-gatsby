@@ -23,17 +23,11 @@ const SEOPress = ({ postOrPage, props, title }) => {
                         accountYoutube
                         facebookAdminId
                         facebookAppId
-                        facebookImg
-                        facebookImgMedia {
-                            nodes {
-                                localFile {
-                                    childImageSharp {
-                                        id
-                                        fixed {
-                                            height
-                                            width
-                                            src
-                                        }
+                        facebookImg {
+                            localFile {
+                                childImageSharp {
+                                    fixed {
+                                        src
                                     }
                                 }
                             }
@@ -43,17 +37,11 @@ const SEOPress = ({ postOrPage, props, title }) => {
                         facebookOg
                         knowledgeContactOption
                         knowledgeContactType
-                        knowledgeImg
-                        knowledgeImgMedia {
-                            nodes {
-                                localFile {
-                                    childImageSharp {
-                                        id
-                                        fixed {
-                                            height
-                                            width
-                                            src
-                                        }
+                        knowledgeImg {
+                            localFile {
+                                childImageSharp {
+                                    fixed {
+                                        src
                                     }
                                 }
                             }
@@ -62,17 +50,11 @@ const SEOPress = ({ postOrPage, props, title }) => {
                         knowledgePhone
                         knowledgeType
                         twitterCard
-                        twitterCardImg
-                        twitterCardImgMedia {
-                            nodes {
-                                localFile {
-                                    childImageSharp {
-                                        id
-                                        fixed {
-                                            height
-                                            width
-                                            src
-                                        }
+                        twitterCardImg {
+                            localFile {
+                                childImageSharp {
+                                    fixed {
+                                        src
                                     }
                                 }
                             }
@@ -196,10 +178,10 @@ const SEOPress = ({ postOrPage, props, title }) => {
                     <meta property="og:type" content="website" />
                     <meta property="og:url" content={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
                     <meta property="og:description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-                    <meta property="og:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.facebookImgMedia.nodes[0].localFile.childImageSharp.fixed.src} />
+                    <meta property="og:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.fixed.src} />
                     <meta property="og:image:alt" content="Plumb-All Logo" />
-                    <meta property="og:image:width" content={siteSEO.wp.seoPressSettings.social.facebookImgMedia.nodes[0].localFile.childImageSharp.fixed.width} />
-                    <meta property="og:image:height" content={siteSEO.wp.seoPressSettings.social.facebookImgMedia.nodes[0].localFile.childImageSharp.fixed.height} />
+                    <meta property="og:image:width" content={siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.fixed.width} />
+                    <meta property="og:image:height" content={siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.fixed.height} />
                     {siteSEO.wp.seoPressSettings.social.facebookLinkOwnershipId ?
                         <meta property="fb:pages" content={siteSEO.wp.seoPressSettings.social.facebookLinkOwnershipId}/>
                         : null
@@ -216,7 +198,7 @@ const SEOPress = ({ postOrPage, props, title }) => {
                     <meta property="twitter:site" content="@PlumbAll" />
                     <meta property="twitter:title" content={title} />
                     <meta property="twitter:description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-                    <meta property="twitter:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.twitterCardImgMedia.nodes[0].localFile.childImageSharp.fixed.src} />
+                    <meta property="twitter:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.twitterCardImg.localFile.childImageSharp.fixed.src} />
                     <meta property="twitter:image:alt" content="Plumb-All Logo" />
                 </Helmet>
                 : null
@@ -240,7 +222,7 @@ const SEOPress = ({ postOrPage, props, title }) => {
                                     `
                                     : null
                                 }
-                                "image": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImgMedia.nodes[0].localFile.childImageSharp.fixed.src}",
+                                "image": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.fixed.src}",
                                 ${siteSEO.wp.seoPressSettings.pro.localBusinessLongitude && siteSEO.wp.seoPressSettings.pro.localBusinessLatitude ?
                                     `
                                 "geo": {
@@ -260,6 +242,7 @@ const SEOPress = ({ postOrPage, props, title }) => {
                                     `
                                 "address": {
                                     "@type": "PostalAddress",
+                                    "streetAddress": "${siteSEO.wp.seoPressSettings.pro.localBusinessStreetAddress}",
                                     "streetAddress": "${siteSEO.wp.seoPressSettings.pro.localBusinessStreetAddress}",
                                     "addressLocality": "${siteSEO.wp.seoPressSettings.pro.localBusinessCity}",
                                     "addressRegion": "${siteSEO.wp.seoPressSettings.pro.localBusinessState}",
@@ -283,7 +266,7 @@ const SEOPress = ({ postOrPage, props, title }) => {
                             "@context": "https://schema.org",
                             "@type": "${siteSEO.wp.seoPressSettings.social.knowledgeType}",
                             "url": "${siteSEO.wp.seoPressSettings.pro.localBusinessUrl}",
-                            "logo": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImgMedia.nodes[0].localFile.childImageSharp.fixed.src}"
+                            "logo": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.fixed.src}"
                         }
                     `}
                 </script>
