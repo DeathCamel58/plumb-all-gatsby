@@ -23,7 +23,7 @@
     "gatsby-plugin-sass": "next",
     "gatsby-plugin-sitemap": "next",
     "gatsby-source-wordpress": "next",
-    "gatsby-transformer-sharp": "^4.0.0-zz-next.3",
+    "gatsby-transformer-sharp": "next",
     "react": "^17.0.1",
     "react-bootstrap": "^1.6.4",
     "react-dom": "^17.0.1",
@@ -32,8 +32,8 @@
     "sass": "^1.43.2"
   },
   "devDependencies": {
-    "gatsby-plugin-image": "^2.0.0-zz-next.3",
-    "gatsby-plugin-sharp": "^4.0.0-zz-next.6",
+    "gatsby-plugin-image": "next",
+    "gatsby-plugin-sharp": "next",
     "gatsby-source-filesystem": "next",
     "html-react-parser": "^1.4.0"
   }
