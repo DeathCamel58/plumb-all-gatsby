@@ -48,8 +48,8 @@ export function onRenderBody(
     setPostBodyComponents([
         <script
             key="popper"
-            src="https://unpkg.com/@popperjs/core@2.10.1/dist/umd/popper.min.js"
-            integrity="sha384-W8fXfP3gkOKtndU4JGtKDvXbO53Wy8SZCQHczT5FMiiqmQfUpWbYdTil/SxwZgAN"
+            src="https://unpkg.com/@popperjs/core@2.10.2/dist/umd/popper.min.js"
+            integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
             crossOrigin="anonymous"
         />,
         <script
