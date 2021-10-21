@@ -237,7 +237,7 @@ ${siteSEO.wp.seoPressSettings.pro.localBusinessStreetAddress &&
 "@context": "https://schema.org",
 "@type": "${siteSEO.wp.seoPressSettings.social.knowledgeType}",
 "url": "${siteSEO.wp.seoPressSettings.pro.localBusinessUrl}",
-"logo": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.gatsbyImageData.src}"
+"logo": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src}"
 }
                 `}
             </script>
