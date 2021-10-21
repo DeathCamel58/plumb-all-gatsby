@@ -118,6 +118,8 @@ const SEOPress = ({ postOrPage, props, title }) => {
         )
     }
 
+    console.log(siteSEO.wp.seoPressSettings)
+
     return <>
         <meta httpEquiv="Content-Type" content="en-us" />
         <title>{title}</title>
