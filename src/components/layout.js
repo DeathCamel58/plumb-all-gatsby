@@ -3,7 +3,7 @@ import {useStaticQuery, graphql} from "gatsby"
 import Menu from "./template-parts/Menu";
 import Footer from "./template-parts/Footer";
 import {Helmet} from "react-helmet";
-import SEOPress from "./SEOPress";
+import SEOPress from "./seo/SEOPress";
 
 const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
     const {
