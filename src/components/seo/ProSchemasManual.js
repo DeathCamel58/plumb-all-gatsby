@@ -29,13 +29,15 @@ const ProSchemasManual = ({ schema }) => {
 `)
 
     // console.log(schema)
-    console.log(data)
+    // console.log(data)
 
     const matchedImage = function(url) {
         for (const i in data.allWpMediaItem.nodes) {
             let image = data.allWpMediaItem.nodes[i];
-            if (image.srcSet.includes(url) || image.sourceUrl === url) {
-                return image;
+            if (image.srcSet) {
+                if (image.srcSet.includes(url) || image.sourceUrl === url) {
+                    return image;
+                }
             }
         }
         return null;
