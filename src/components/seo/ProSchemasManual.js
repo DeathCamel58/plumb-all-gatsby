@@ -28,9 +28,6 @@ const ProSchemasManual = ({ schema }) => {
 }
 `)
 
-    // console.log(schema)
-    // console.log(data)
-
     const matchedImage = function(url) {
         for (const i in data.allWpMediaItem.nodes) {
             let image = data.allWpMediaItem.nodes[i];
@@ -45,9 +42,7 @@ const ProSchemasManual = ({ schema }) => {
 
     let parsedSchema = ``
     let key = ``
-    console.log(schema._seopress_pro_rich_snippets_service_img)
     let image = matchedImage(schema._seopress_pro_rich_snippets_service_img)
-    console.log(image)
 
     if (schema._seopress_pro_rich_snippets_type === 'services') {
         parsedSchema =
