@@ -36,8 +36,6 @@ const Menu = ({ isHomePage, children }) => {
                         <Nav>
                             {
                                 wpMenu.wpMenu.menuItems.nodes.map((menuItem, i) => {
-                                    const path = menuItem?.connectedNode?.node?.uri ?? menuItem.url
-
                                     return (
                                         <Link
                                             key={menuItem.url}

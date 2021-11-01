@@ -118,13 +118,13 @@ const SEOPress = ({ postOrPage, props, title }) => {
         )
     }
 
-    console.log(siteSEO.wp.seoPressSettings)
-
     return <>
-        <meta httpEquiv="Content-Type" content="en-us" />
-        <title>{title}</title>
-        <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-        <link rel="canonical" href={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
+        <Helmet>
+            <meta httpEquiv="Content-Type" content="en-us" />
+            <title>{title}</title>
+            <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
+            <link rel="canonical" href={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
+        </Helmet>
 
         {/* Insert Pro Schemas */}
         {postOrPage.seo.proSchemasManual && postOrPage.seo.proSchemasManual !== "\"\"" &&
