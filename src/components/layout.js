@@ -22,10 +22,10 @@ const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
     `)
 
     // INITIALIZE GOOGLE OPTIMIZE EXPERIMENT ON 'optimize.activate'
-    useEffect(() => {
-        window.dataLayer = window.dataLayer || []
-        window.dataLayer.push({ event: 'optimize.activate' })
-    }, [])
+    // useEffect(() => {
+    //     window.dataLayer = window.dataLayer || []
+    //     window.dataLayer.push({ event: 'optimize.activate' })
+    // }, [])
 
     return (
         <div className="global-wrapper" data-is-root-path={isHomePage}>
