@@ -56,7 +56,13 @@ export const pageQuery = graphql`query BlogPageById($id: String!) {
                 altText
                 localFile {
                     childImageSharp {
-                        gatsbyImageData(quality: 100, placeholder: TRACED_SVG, layout: FULL_WIDTH)
+                        gatsbyImageData(
+                            quality: 100
+                            placeholder: BLURRED
+                            layout: FULL_WIDTH
+                            width: 1920
+                            height: 400
+                        )
                     }
                 }
             }
