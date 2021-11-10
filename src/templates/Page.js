@@ -60,8 +60,6 @@ export const pageQuery = graphql`query BlogPageById($id: String!) {
                             quality: 100
                             placeholder: BLURRED
                             layout: FULL_WIDTH
-                            width: 1920
-                            height: 400
                         )
                     }
                 }
