@@ -111,7 +111,10 @@ const SEOPress = ({ postOrPage, props, title }) => {
 
     if (postOrPage === '404') {
         return (
-            <Helmet>
+            <Helmet
+                htmlAttributes={{
+                    lang: 'en',
+                }}>
                 <title>{title}</title>
                 <meta name="description" content={`404 - This page does not exist.`} />
             </Helmet>
@@ -119,7 +122,10 @@ const SEOPress = ({ postOrPage, props, title }) => {
     }
 
     return <>
-        <Helmet>
+        <Helmet
+            htmlAttributes={{
+                lang: 'en',
+            }}>
             <meta httpEquiv="Content-Type" content="en-us" />
             <title>{title}</title>
             <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />

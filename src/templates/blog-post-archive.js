@@ -139,9 +139,10 @@ export const pageQuery = graphql`query WordPressPostArchive($offset: Int!, $post
                             gatsbyImageData(
                                 quality: 100
                                 placeholder: BLURRED
-                                layout: FULL_WIDTH
+                                layout: CONSTRAINED
                                 formats: [AUTO, WEBP, AVIF]
                                 blurredOptions: {width: 100}
+                                width: 590
                             )
                         }
                     }
