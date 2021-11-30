@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import Menu from "./template-parts/Menu";
 import Footer from "./template-parts/Footer";
