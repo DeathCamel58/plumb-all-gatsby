@@ -29,12 +29,12 @@
     "react-dom": "^17.0.1",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.1.2",
-    "sass": "^1.43.4"
+    "sass": "^1.44.0"
   },
   "devDependencies": {
     "gatsby-plugin-image": "^2.2.0",
     "gatsby-plugin-sharp": "^4.2.0",
     "gatsby-source-filesystem": "^4.2.0",
-    "html-react-parser": "^1.4.0"
+    "html-react-parser": "^1.4.1"
   }
 }
