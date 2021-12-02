@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "gatsby-plugin-image": "^2.2.0",
-    "gatsby-plugin-sharp": "^4.2.0",
+    "gatsby-plugin-sharp": "^4.3.0",
     "gatsby-source-filesystem": "^4.2.0",
     "html-react-parser": "^1.4.1"
   }
