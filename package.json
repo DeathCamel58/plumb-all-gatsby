@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "bootstrap": "^5.1.3",
-    "gatsby": "^4.5.3",
+    "gatsby": "^4.5.5",
     "gatsby-plugin-google-tagmanager": "^4.5.0",
     "gatsby-plugin-manifest": "^4.5.2",
     "gatsby-plugin-react-helmet": "^5.5.0",
