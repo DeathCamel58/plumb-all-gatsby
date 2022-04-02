@@ -34,7 +34,7 @@
   "devDependencies": {
     "gatsby-plugin-image": "^2.11.1",
     "gatsby-plugin-sharp": "^4.11.1",
-    "gatsby-source-filesystem": "^4.8.0",
+    "gatsby-source-filesystem": "^4.11.1",
     "html-react-parser": "^1.4.10"
   }
 }
