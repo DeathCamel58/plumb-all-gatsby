@@ -158,7 +158,10 @@ const SEOPress = ({ postOrPage, props, title }) => {
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
                 <meta property="og:description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-                <meta property="og:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.gatsbyImageData.src} />
+                {siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src ?
+                    <meta property="og:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src} />
+                    : null
+                }
                 <meta property="og:image:alt" content="Plumb-All Logo" />
                 <meta property="og:image:width" content={siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.gatsbyImageData.width} />
                 <meta property="og:image:height" content={siteSEO.wp.seoPressSettings.social.facebookImg.localFile.childImageSharp.gatsbyImageData.height} />
@@ -178,7 +181,10 @@ const SEOPress = ({ postOrPage, props, title }) => {
                 <meta property="twitter:site" content="@PlumbAll" />
                 <meta property="twitter:title" content={title} />
                 <meta property="twitter:description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-                <meta property="twitter:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.twitterCardImg.localFile.childImageSharp.gatsbyImageData.src} />
+                {siteSEO.wp.seoPressSettings.social.twitterCardImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src ?
+                    <meta property="twitter:image" content={siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.twitterCardImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src} />
+                    : null
+                }
                 <meta property="twitter:image:alt" content="Plumb-All Logo" />
             </Helmet>
             : null
@@ -202,7 +208,7 @@ ${siteSEO.wp.seoPressSettings.pro.localBusinessPriceRange ?
     `
     : null
 }
-"image": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.gatsbyImageData.src}",
+"image": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src}",
 ${siteSEO.wp.seoPressSettings.pro.localBusinessLongitude && siteSEO.wp.seoPressSettings.pro.localBusinessLatitude ?
     `
 "geo": {
