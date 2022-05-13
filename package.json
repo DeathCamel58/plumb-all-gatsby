@@ -32,7 +32,7 @@
     "sass": "^1.51.0"
   },
   "devDependencies": {
-    "gatsby-plugin-image": "^2.13.0",
+    "gatsby-plugin-image": "^2.14.1",
     "gatsby-plugin-sharp": "^4.13.0",
     "gatsby-source-filesystem": "^4.13.0",
     "html-react-parser": "^1.4.12"
