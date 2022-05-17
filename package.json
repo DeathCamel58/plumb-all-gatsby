@@ -22,7 +22,7 @@
     "gatsby-plugin-react-helmet": "^5.13.0",
     "gatsby-plugin-sass": "^5.13.0",
     "gatsby-plugin-sitemap": "^5.13.0",
-    "gatsby-source-wordpress": "^6.13.0",
+    "gatsby-source-wordpress": "^6.14.2",
     "gatsby-transformer-sharp": "^4.13.0",
     "react": "^18.1.0",
     "react-bootstrap": "^2.3.1",
