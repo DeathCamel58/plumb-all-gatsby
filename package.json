@@ -30,7 +30,7 @@
     "react-dom": "^18.2.0",
     "react-helmet": "^6.1.0",
     "react-helmet-async": "^1.2.3",
-    "sass": "^1.54.3"
+    "sass": "^1.54.4"
   },
   "devDependencies": {
     "gatsby-plugin-image": "^2.20.0",
