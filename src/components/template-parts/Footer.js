@@ -66,7 +66,7 @@ const Footer = ({ isHomePage, children }) => {
                                 <p className="text_color-lilac">
                                     With many plumbing crews out in the field, we can get to your location quickly, so that you can
                                     get your problem fixed ASAP.<br />
-                                    We're located in Jonesboro, Georgia, so we're always nearby. <Link to={"/privacy-policy/"}>Privacy Policy</Link>
+                                    We're located in <Link to={"/expert-plumbing-services-in-atlanta-ga/"}>Jonesboro, Georgia</Link>, so we're always nearby. <Link to={"/privacy-policy/"}>Privacy Policy</Link>
                                 </p>
                             </Col>
                         </Row>
