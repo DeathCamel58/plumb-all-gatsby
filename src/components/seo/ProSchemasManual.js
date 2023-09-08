@@ -6,8 +6,7 @@
  */
 
 import React from "react"
-import {graphql, useStaticQuery} from "gatsby"
-import {Helmet} from "react-helmet";
+import {graphql, Script, useStaticQuery} from "gatsby"
 
 const ProSchemasManual = ({ schema }) => {
     const data = useStaticQuery(graphql`query proSchemas {
@@ -76,12 +75,10 @@ ${schema._seopress_pro_rich_snippets_service_img ?
 
     return (
         <>
-            <Helmet>
-                {/* Insert Pro Schemas */}
-                <script type="application/ld+json" key={key}>
-                    {parsedSchema}
-                </script>
-            </Helmet>
+            {/* Insert Pro Schemas */}
+            <Script type="application/ld+json" key={key}>
+                {parsedSchema}
+            </Script>
         </>
     )
 }

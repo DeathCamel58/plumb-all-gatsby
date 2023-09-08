@@ -2,25 +2,9 @@ import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import Menu from "./template-parts/Menu";
 import Footer from "./template-parts/Footer";
-import {Helmet} from "react-helmet";
 import SEOPress from "./seo/SEOPress";
 
-const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
-    const {
-        wp: {
-            generalSettings: { title },
-        },
-    } = useStaticQuery(graphql`
-        query LayoutQuery {
-            wp {
-                generalSettings {
-                    title
-                    description
-                }
-            }
-        }
-    `)
-
+const Layout = ({ isHomePage, children }) => {
     // INITIALIZE GOOGLE OPTIMIZE EXPERIMENT ON 'optimize.activate'
     // useEffect(() => {
     //     window.dataLayer = window.dataLayer || []
@@ -38,8 +22,6 @@ const Layout = ({ isHomePage, children, pageName, id, postOrPage, props }) => {
             }
 
             <Footer />
-
-            <SEOPress props={props} postOrPage={postOrPage} title={`${title}${pageName ? ' - ' + pageName : ''}`} />
         </div>
     )
 }

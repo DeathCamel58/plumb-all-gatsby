@@ -57,7 +57,6 @@ module.exports = {
         // selfHostedOrigin: process.env.siteUrl || "https://plumb-all.com",
       },
     },
-    "gatsby-plugin-react-helmet",
     {
       resolve: "gatsby-plugin-sitemap",
       options: {
