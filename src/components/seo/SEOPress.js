@@ -6,8 +6,7 @@
  */
 
 import React from "react"
-import {useStaticQuery, graphql} from "gatsby"
-import {Helmet} from "react-helmet";
+import {useStaticQuery, graphql, Script} from "gatsby"
 import ProSchemasManual from "./ProSchemasManual.js";
 
 const SEOPress = ({ postOrPage, props, title }) => {
@@ -105,32 +104,30 @@ const SEOPress = ({ postOrPage, props, title }) => {
       siteUrl
     }
   }
+  wp {
+    generalSettings {
+      title
+      description
+    }
+  }
 }
 `
     )
 
     if (postOrPage === '404') {
         return (
-            <Helmet
-                htmlAttributes={{
-                    lang: 'en',
-                }}>
-                <title>{title}</title>
+            <>
+                <title>{siteSEO.wp.generalSettings.title}</title>
                 <meta name="description" content={`404 - This page does not exist.`} />
-            </Helmet>
+            </>
         )
     }
 
     return <>
-        <Helmet
-            htmlAttributes={{
-                lang: 'en',
-            }}>
-            <meta httpEquiv="Content-Type" content="en-us" />
-            <title>{title}</title>
-            <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
-            <link rel="canonical" href={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
-        </Helmet>
+        <meta httpEquiv="Content-Type" content="en-us" />
+        <title>{siteSEO.wp.generalSettings.title}{postOrPage.title ? ' - ' + postOrPage.title : ''}</title>
+        <meta name="description" content={postOrPage.seo.metaDesc ? postOrPage.seo.metaDesc : ''} />
+        <link rel="canonical" href={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
 
         {/* Insert Pro Schemas */}
         {postOrPage.seo.proSchemasManual && postOrPage.seo.proSchemasManual !== "\"\"" &&
@@ -153,7 +150,7 @@ const SEOPress = ({ postOrPage, props, title }) => {
 
         {/* Opengraph Metas Ref: https://ogp.me */}
         {siteSEO.wp.seoPressSettings.social.facebookOg ?
-            <Helmet>
+            <>
                 <meta property="og:title" content={title} />
                 <meta property="og:type" content="website" />
                 <meta property="og:url" content={postOrPage.seo.canonicalUrl ? postOrPage.seo.canonicalUrl : props} />
@@ -169,14 +166,14 @@ const SEOPress = ({ postOrPage, props, title }) => {
                     <meta property="fb:pages" content={siteSEO.wp.seoPressSettings.social.facebookLinkOwnershipId}/>
                     : null
                 }
-            </Helmet>
+            </>
             :
             null
         }
 
         {/* Twitter Card Metas Ref: https://developer.twitter.com/en/docs/twitter-for-websites/cards/overview/markup */}
         {siteSEO.wp.seoPressSettings.social.twitterCard ?
-            <Helmet>
+            <>
                 <meta property="twitter:card" content="summary" />
                 <meta property="twitter:site" content="@PlumbAll" />
                 <meta property="twitter:title" content={title} />
@@ -186,14 +183,13 @@ const SEOPress = ({ postOrPage, props, title }) => {
                     : null
                 }
                 <meta property="twitter:image:alt" content="Plumb-All Logo" />
-            </Helmet>
+            </>
             : null
         }
 
         {/* Structured Data */}
-        <Helmet>
-            <script type="application/ld+json">
-                {`
+        <Script type="application/ld+json">
+            {`
 {
 "@context": "https://schema.org",
 "@type": "${siteSEO.wp.seoPressSettings.pro.localBusinessType}",
@@ -243,19 +239,18 @@ ${siteSEO.wp.seoPressSettings.pro.localBusinessStreetAddress &&
     "reviewCount": "159"
 }
 }
-                    `}
-            </script>
-            <script type="application/ld+json">
-                {`
+                `}
+        </Script>
+        <Script type="application/ld+json">
+            {`
 {
 "@context": "https://schema.org",
 "@type": "${siteSEO.wp.seoPressSettings.social.knowledgeType}",
 "url": "${siteSEO.wp.seoPressSettings.pro.localBusinessUrl}",
 "logo": "${siteSEO.site.siteMetadata.siteUrl + siteSEO.wp.seoPressSettings.social.knowledgeImg.localFile.childImageSharp.gatsbyImageData.images.fallback.src}"
 }
-                `}
-            </script>
-        </Helmet>
+            `}
+        </Script>
     </>;
 }
 

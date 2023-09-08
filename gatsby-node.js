@@ -186,7 +186,7 @@ async function createBlogPostArchive({ posts, gatsbyUtilities }) {
 async function getPages({ graphql, reporter }) {
     const graphqlResult = await graphql(/* GraphQL */ `
     query WpPage {
-      allWpPage(sort: { fields: [date], order: DESC }) {
+      allWpPage(sort: { date: DESC }) {
         edges {
           # note: this is a GraphQL alias. It renames "node" to "post" for this query
           # We're doing this because this "node" is a post! It makes our code more readable further down the line.
@@ -224,8 +224,7 @@ async function getPages({ graphql, reporter }) {
 async function getPosts({ graphql, reporter }) {
     const graphqlResult = await graphql(/* GraphQL */ `
     query WpPosts {
-      # Query all WordPress blog posts sorted by date
-      allWpPost(sort: { fields: [date], order: DESC }) {
+      allWpPost(sort: { date: DESC }) {
         edges {
           previous {
             id
