@@ -1,15 +1,24 @@
 import React from "react"
-import {Link, graphql} from "gatsby"
+import {Link, graphql, Script} from "gatsby"
 import parse from "html-react-parser"
 
 import Layout from "../components/layout"
-// import Seo from "../components/seo"
 import Card from "react-bootstrap/Card"
 import { GatsbyImage } from "gatsby-plugin-image";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import {Container} from "react-bootstrap";
-import {Helmet} from "react-helmet";
+import SEOPress from "../components/seo/SEOPress";
+
+// Statically define postOrPage to allow the SEO stuff to work
+const postOrPage = {
+    id: "N/A",
+    title: "News",
+    content: "NEWS",
+    seo: {
+        metaDesc: "Here at Plumb-All, we take great pride in educating the public about some plumbing basics. We hope that these blog posts are helpful and informative."
+    }
+}
 
 const BlogIndex = ({
                        data,
@@ -17,19 +26,9 @@ const BlogIndex = ({
                    }) => {
     const posts = data.allWpPost.nodes
 
-    // Statically define postOrPage to allow the SEO stuff to work
-    const postOrPage = {
-        id: "N/A",
-        title: "News",
-        content: "NEWS",
-        seo: {
-            metaDesc: "Here at Plumb-All, we take great pride in educating the public about some plumbing basics. We hope that these blog posts are helpful and informative."
-        }
-    }
-
     if (!posts.length) {
         return (
-            <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
+            <Layout>
                 <Row>
                     <Col>
                         <p>
@@ -46,7 +45,7 @@ const BlogIndex = ({
     }
 
     return (
-        <Layout pageName="Blog" postOrPage={postOrPage} props={`https://plumb-all.com/news/`}>
+        <Layout>
             <Container className="not-front-page">
                 <Row>
                     <Col>
@@ -100,23 +99,27 @@ const BlogIndex = ({
                 </>
             )}
             {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
-
-            <Helmet>
-                <script
-                    src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-                    integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-                    crossOrigin="anonymous" async
-                />
-            </Helmet>
         </Layout>
     );
 }
 
 export default BlogIndex
 
+export const Head = ({location, data}) => (
+    <>
+        <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={postOrPage} />
+        <Script
+            strategy="post-hydrate"
+            src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
+            integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
+            crossOrigin="anonymous"
+        />
+    </>
+)
+
 export const pageQuery = graphql`query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {
     allWpPost(
-        sort: {fields: [date], order: DESC}
+        sort: {date: DESC}
         limit: $postsPerPage
         skip: $offset
     ) {

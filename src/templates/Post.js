@@ -14,7 +14,7 @@ import parse from "html-react-parser"
 import Layout from "../components/layout"
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
-// import Seo from "../components/seo"
+import SEOPress from "../components/seo/SEOPress";
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
     const featuredImage = {
@@ -23,7 +23,7 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
     }
 
     return (
-        <Layout pageName={post.title} id={post.id} postOrPage={post} props={`https://plumb-all.com${location.pathname}`}>
+        <Layout>
             {/* if we have a featured image for this post let's display it */}
             {featuredImage?.fluid && (
                 <header>
@@ -60,6 +60,10 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
 }
 
 export default BlogPostTemplate
+
+export const Head = ({location, data}) => (
+    <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={data.post} />
+)
 
 export const pageQuery = graphql`query BlogPostById($id: String!) {
     post: wpPost(id: {eq: $id}) {
