@@ -15,6 +15,7 @@
     "clean": "gatsby clean"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.4.2",
     "bootstrap": "^5.2.3",
     "gatsby": "^5.12.4",
     "gatsby-plugin-google-tagmanager": "^5.12.0",
