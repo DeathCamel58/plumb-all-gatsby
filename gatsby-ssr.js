@@ -1,4 +1,5 @@
 const React = require("react")
+import { Script } from "gatsby"
 
 export function onRenderBody(
     {setPostBodyComponents, setHeadComponents}) {
@@ -10,8 +11,9 @@ export function onRenderBody(
             //     key="google-optimize"
             //     src="https://www.googleoptimize.com/optimize.js?id=OPT-MH4QC29"
             // />,
-            <script
+            <Script
                 key="facebook-tracking-events"
+                strategy="post-hydrate"
                 dangerouslySetInnerHTML={{
                     __html: `
                     ! function(f, b, e, v, n, t, s) {
@@ -35,7 +37,8 @@ export function onRenderBody(
                 `,
                 }}
             />,
-            <script key="bing-tracking-events"
+            <Script key="bing-tracking-events"
+                    strategy="post-hydrate"
                     dangerouslySetInnerHTML={{
                         __html: `
                     (function(w,d,t,r,u){var f,n,i;w[u]=w[u]||[],f=function(){var o={ti:"17508257"};o.q=w[u],w[u]=new UET(o),w[u].push("pageLoad")},n=d.createElement(t),n.type="text/javascript",n.src=r,n.async=1,n.onload=n.onreadystatechange=function(){var s=this.readyState;s&&s!=="loaded"&&s!=="complete"||(f(),n.onload=n.onreadystatechange=null)},i=d.getElementsByTagName(t)[0],i.parentNode.insertBefore(n,i)})(window,document,"script","/js/bat.js","uetq");
@@ -46,17 +49,7 @@ export function onRenderBody(
     }
 
     setPostBodyComponents([
-        <script
-            key="popper"
-            src="https://unpkg.com/@popperjs/core@2.11.6/dist/umd/popper.min.js"
-            integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
-            crossOrigin="anonymous"
-        />,
-        <script
-            key="bootstrap-bundle-js"
-            src="https://unpkg.com/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8"
-            crossOrigin="anonymous"
-        />
+        <Script src={"@popperjs/core/dist/umd/popper.min.js"} />,
+        <Script src={"bootstrap/dist/js/bootstrap.bundle.js"} />
     ]);
 }
