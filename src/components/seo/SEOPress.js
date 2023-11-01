@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import {useStaticQuery, graphql, Script} from "gatsby"
+import { useStaticQuery, graphql, Script } from "gatsby"
 import ProSchemasManual from "./ProSchemasManual.js";
 
 const SEOPress = ({ postOrPage, props, title }) => {

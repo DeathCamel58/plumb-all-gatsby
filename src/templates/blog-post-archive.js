@@ -1,13 +1,10 @@
 import React from "react"
-import {Link, graphql, Script} from "gatsby"
+import { Link, graphql, Script } from "gatsby"
 import parse from "html-react-parser"
 
 import Layout from "../components/layout"
-import Card from "react-bootstrap/Card"
 import { GatsbyImage } from "gatsby-plugin-image";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import {Container} from "react-bootstrap";
+import { Container, Row, Col, Card } from "react-bootstrap";
 import SEOPress from "../components/seo/SEOPress";
 
 // Statically define postOrPage to allow the SEO stuff to work
