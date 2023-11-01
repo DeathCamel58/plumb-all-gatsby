@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import {graphql, Script, useStaticQuery} from "gatsby"
+import { graphql, Script, useStaticQuery } from "gatsby"
 
 const ProSchemasManual = ({ schema }) => {
     const data = useStaticQuery(graphql`query proSchemas {

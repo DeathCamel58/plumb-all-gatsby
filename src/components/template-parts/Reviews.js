@@ -1,8 +1,7 @@
 import React from "react"
 import {useStaticQuery, graphql} from "gatsby"
 import parse from "html-react-parser";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
+import { Container } from "react-bootstrap";
 
 const Reviews = ({ isHomePage, children }) => {
     // const reviews = useStaticQuery(graphql`
