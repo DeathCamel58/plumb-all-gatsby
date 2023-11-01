@@ -90,15 +90,18 @@ const BlogIndex = ({
                         );
                     })}
                 </Row>
-            </Container>
 
-            {previousPagePath && (
-                <>
-                    <Link to={previousPagePath}>Previous page</Link>
-                    <br/>
-                </>
-            )}
-            {nextPagePath && <Link to={nextPagePath}>Next page</Link>}
+                {previousPagePath != null|| nextPagePath != null ?
+                    <Row>
+                        <nav className="pagination justify-content-center" aria-label="Pagination">
+                            {previousPagePath && <li className="page-item"><Link className="page-link" to={previousPagePath}>Previous page</Link></li>}
+                            {nextPagePath && <li className="page-item"><Link className="page-link" to={nextPagePath}>Next page</Link></li>}
+                        </nav>
+                    </Row>
+                    : null
+                }
+
+            </Container>
         </Layout>
     );
 }
