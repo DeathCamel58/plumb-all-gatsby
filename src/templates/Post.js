@@ -12,7 +12,7 @@ import parse from "html-react-parser"
 // import "../css/@wordpress/block-library/build-style/theme.css"
 
 import Layout from "../components/layout"
-import { Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import SEOPress from "../components/seo/SEOPress";
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
@@ -44,14 +44,16 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                     <section itemProp="articleBody">{parse(post.content)}</section>
                 )}
 
-                <Row>
-                    <Col>
-                        <Link to="/news/">Back to the Blog</Link>
-                    </Col>
-                    <Col>
-                        <p className="text-end">Posted on {post.date}</p>
-                    </Col>
-                </Row>
+                <Container>
+                    <Row>
+                        <Col>
+                            <Link to="/news/">Back to the Blog</Link>
+                        </Col>
+                        <Col>
+                            <p className="text-end">Posted on {post.date}</p>
+                        </Col>
+                    </Row>
+                </Container>
 
             </article>
         </Layout>
