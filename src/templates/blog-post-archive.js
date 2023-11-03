@@ -50,7 +50,7 @@ const BlogIndex = ({
                             Our Recent Posts
                         </h1>
                         <p>
-                            We take great pride in educating the public about some plumbing basics. We hope that these are helpful and informative.
+                            At Plumb-All, we're dedicated to keeping your plumbing in top shape, ensuring you can enjoy a smoothly functioning home. Water pressure matters, and we're here to help you understand its importance. Explore our latest blog posts to uncover valuable insights into maintaining your plumbing system. From addressing low water pressure to handling unexpected issues, we're your go-to source for expert advice and solutions. With over two decades of experience, Plumb-All is your trusted partner for all your plumbing and septic needs in Jonesboro, GA.
                         </p>
                     </Col>
                 </Row>
