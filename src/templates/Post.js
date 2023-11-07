@@ -14,6 +14,8 @@ import parse from "html-react-parser"
 import Layout from "../components/layout"
 import { Container, Col, Row } from "react-bootstrap";
 import SEOPress from "../components/seo/SEOPress";
+import FreeEstimates from "../components/template-parts/sidebar/free-estimates";
+import TwentyFourSeven from "../components/template-parts/sidebar/24-7-service";
 
 const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
     const featuredImage = {
@@ -34,28 +36,40 @@ const BlogPostTemplate = ({ data: { previous, next, post }, location }) => {
                         className="toprow"/>
                 </header>
             )}
-            <article
-                className="blog-post not-front-page"
-                itemScope
-                itemType="http://schema.org/Article"
-            >
+            <Container>
+                <Row>
+                    <Col md="8">
+                        <article
+                            className="blog-post not-front-page"
+                            itemScope
+                            itemType="http://schema.org/Article"
+                        >
 
-                {!!post.content && (
-                    <section itemProp="articleBody">{parse(post.content)}</section>
-                )}
+                            {!!post.content && (
+                                <section itemProp="articleBody">{parse(post.content)}</section>
+                            )}
 
-                <Container>
-                    <Row>
-                        <Col>
-                            <Link to="/news/">Back to the Blog</Link>
-                        </Col>
-                        <Col>
-                            <p className="text-end">Posted on {post.date}</p>
-                        </Col>
-                    </Row>
-                </Container>
+                        </article>
+                    </Col>
+                    <Col md="4">
 
-            </article>
+                        <FreeEstimates />
+                        <TwentyFourSeven />
+
+                    </Col>
+                </Row>
+            </Container>
+
+            <Container>
+                <Row>
+                    <Col>
+                        <Link to="/news/">Back to the Blog</Link>
+                    </Col>
+                    <Col>
+                        <p className="text-end">Posted on {post.date}</p>
+                    </Col>
+                </Row>
+            </Container>
         </Layout>
     );
 }

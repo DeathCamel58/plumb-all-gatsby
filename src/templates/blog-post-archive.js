@@ -91,8 +91,16 @@ const BlogIndex = ({
                 {previousPagePath != null|| nextPagePath != null ?
                     <Row>
                         <nav className="pagination justify-content-center" aria-label="Pagination">
-                            {previousPagePath && <li className="page-item"><Link className="page-link" to={previousPagePath}>Previous page</Link></li>}
-                            {nextPagePath && <li className="page-item"><Link className="page-link" to={nextPagePath}>Next page</Link></li>}
+                            {previousPagePath &&
+                                <li className="page-item">
+                                    <Link className="page-link" to={previousPagePath} key="previous-page">Previous page</Link>
+                                </li>
+                            }
+                            {nextPagePath &&
+                                <li className="page-item">
+                                    <Link className="page-link" to={nextPagePath} key="next-page">Next page</Link>
+                                </li>
+                            }
                         </nav>
                     </Row>
                     : null
