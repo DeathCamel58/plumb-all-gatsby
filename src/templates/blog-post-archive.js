@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
-import { Link, graphql } from "gatsby"
+import { Link, graphql, Script } from "gatsby"
 import parse from "html-react-parser"
-import Masonry from 'masonry-layout';
 
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -28,18 +27,23 @@ const BlogIndex = ({
     const masonryRef = useRef(null);
     const [masonryRender, setMasonryRender] = useState(true);
     useEffect(() => {
-        console.log('Component rendered/loaded');
-        let masonry = new Masonry(masonryRef.current, {
-            itemSelector: '.masonry-item',
-        });
-
-        masonry.layout();
-
-        setMasonryRender(false);
-
-        return () => {
-            masonry.destroy();
-        };
+        // import('masonry-layout').then((module) => {
+        //     // Use the package here
+        //     const package = module.default;
+        //     console.log('Package imported:', package);
+        // });
+        //
+        // let masonry = new Masonry(masonryRef.current, {
+        //     itemSelector: '.masonry-item',
+        // });
+        //
+        // masonry.layout();
+        //
+        // setMasonryRender(false);
+        //
+        // return () => {
+        //     masonry.destroy();
+        // };
     }, [masonryRender]);
 
     if (!posts.length) {
