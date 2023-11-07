@@ -1,0 +1,48 @@
+// The size of the grid of 3x3
+$gridSize: 60px;
+$third: calc($gridSize / 3);
+
+.plumb-all-grid {
+    width: $gridSize;
+    height: $gridSize;
+}
+
+.plumb-all-grid > div {
+    width: 33%;
+    height: 33%;
+    //background-color: currentColor;
+    float: left;
+    background-image: url(/img/icon.png);
+    background-size: $gridSize $gridSize;
+    //background-repeat: no-repeat;
+
+    -webkit-animation: loader-scaleDelay 1.3s infinite ease-in-out;
+    animation: loader-scaleDelay 1.3s infinite ease-in-out;
+}
+
+/*
+ * Spinner positions
+ * 1 2 3
+ * 4 5 6
+ * 7 8 9
+ */
+
+.plumb-all-grid > div:nth-child(1) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; background-position: 0 0; }
+.plumb-all-grid > div:nth-child(2) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s; background-position: calc($third * 2) 0; }
+.plumb-all-grid > div:nth-child(3) { -webkit-animation-delay: 0.4s; animation-delay: 0.4s; background-position: $third 0; }
+.plumb-all-grid > div:nth-child(4) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s; background-position: 0 calc($third * 2); }
+.plumb-all-grid > div:nth-child(5) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; background-position: calc($third * 2) calc($third * 2); }
+.plumb-all-grid > div:nth-child(6) { -webkit-animation-delay: 0.3s; animation-delay: 0.3s; background-position: $third calc($third * 2); }
+.plumb-all-grid > div:nth-child(7) { -webkit-animation-delay: 0.0s; animation-delay: 0.0s; background-position: 0 $third; }
+.plumb-all-grid > div:nth-child(8) { -webkit-animation-delay: 0.1s; animation-delay: 0.1s; background-position: calc($third * 2) $third; }
+.plumb-all-grid > div:nth-child(9) { -webkit-animation-delay: 0.2s; animation-delay: 0.2s; background-position: $third $third; }
+
+@-webkit-keyframes loader-scaleDelay {
+    0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0) }
+    35%           { -webkit-transform:scale3D(0.0, 0.0, 1.0) }
+}
+
+@keyframes loader-scaleDelay {
+    0%, 70%, 100% { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(1.0, 1.0, 1.0) }
+    35%           { -webkit-transform:scale3D(1.0, 1.0, 1.0); transform:scale3D(0.0, 0.0, 1.0) }
+}
