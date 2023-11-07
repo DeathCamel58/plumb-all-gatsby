@@ -1,20 +1,23 @@
 import React, { useState, useRef, useEffect } from "react";
 import { Button, Modal } from "react-bootstrap";
-import Spinner from "react-spinkit";
+import Loader from "../misc/loader";
 
 const FreeEstimates = () => {
     // Stuff for handling loading display while the iframe is loading
     const [iframeLoading, setIframeLoading] = useState(true);
 
+    // Stuff for handling loading display while the iframe is loading
+    const [reregister, setReregister] = useState(false);
+
     // Stuff for handling the visibility of the modal
     const [workRequestVisible, setWorkRequestVisible] = useState(false);
 
     const workRequestOpen = () => {
+        setReregister(true);
         setIframeLoading(true);
         setWorkRequestVisible(true);
     };
     const workRequestClose = () => setWorkRequestVisible(false);
-
 
     // Stuff for handling dynamically resizing the modal to the size Jobber requests
     const [modalSize, setModalSize] = useState("492px");
@@ -23,7 +26,6 @@ const FreeEstimates = () => {
     // Stuff for receiving events from Jobber's iframe
     const iframeRef = useRef(null);
     const handleIframeEvent = (event) => {
-        // Your event handling code here
         if (event.origin === "https://clienthub.getjobber.com") {
 
             // Once we get the first iframe event, the iframe is loaded.
@@ -47,23 +49,20 @@ const FreeEstimates = () => {
         }
     };
 
-    const addMessageListener = (iframe) => {
-        if (iframe) {
-            window.addEventListener('message', handleIframeEvent);
-        }
-    };
-
     useEffect(() => {
+        const addMessageListener = (iframe) => {
+            if (iframe) {
+                window.addEventListener('message', handleIframeEvent);
+            }
+        };
+
         addMessageListener(iframeRef.current);
 
         // Clean up the event listener when the component unmounts
         return () => {
             window.removeEventListener('message', handleIframeEvent);
-            if (iframeRef.current) {
-                iframeRef.current.onload = null; // Remove the onload event handler
-            }
         };
-    });
+    }, [reregister]);
 
     return (
         <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
@@ -77,18 +76,11 @@ const FreeEstimates = () => {
                 <Modal size="lg" show={workRequestVisible} onHide={workRequestClose}>
                     <Modal.Body>
                         <div style={{width: "100%", height: modalSize}} className={iframeLoading ? "" : "d-none"}>
-                            <Spinner
-                                name='wordpress'
-                                color="#2255ce"
-                                className={"position-absolute top-50 start-50"}
-                                fadeIn="none"
-                            />
+                        {/*<div style={{width: "100%", height: modalSize}}>*/}
+                            <Loader />
                         </div>
                         <iframe
-                            ref={(iframe) => {
-                                iframeRef.current = iframe;
-                                addMessageListener(iframe);
-                            }}
+                            ref={iframeRef}
                             title="Work Request"
                             src="https://clienthub.getjobber.com/client_hubs/4015938f-cada-4cbe-9e0f-3fa27b028598/public/work_request/embedded_dialog_new"
                             width="100%"
