@@ -16,12 +16,10 @@ document.getElementById("contactForm").addEventListener("submit", function(event
                 body: formData,
             })
                 .then(response => response.json())
-                .then(data => {
-                    document.getElementById("formCover").classList.remove("invisible");
-                })
                 .catch(error => {
                     console.error("Error:", error);
                 });
+            document.getElementById("formCover").classList.remove("invisible");
         });
     });
 });
