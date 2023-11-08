@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useEffect, useRef, useState } from "react"
 import { Link, graphql, Script } from "gatsby"
 import parse from "html-react-parser"
 
@@ -22,6 +22,29 @@ const BlogIndex = ({
                        pageContext: {nextPagePath, previousPagePath},
                    }) => {
     const posts = data.allWpPost.nodes
+
+    // Stuff for the masonry layout
+    const masonryRef = useRef(null);
+    const [masonryRender, setMasonryRender] = useState(true);
+    useEffect(() => {
+        // import('masonry-layout').then((module) => {
+        //     // Use the package here
+        //     const package = module.default;
+        //     console.log('Package imported:', package);
+        // });
+        //
+        // let masonry = new Masonry(masonryRef.current, {
+        //     itemSelector: '.masonry-item',
+        // });
+        //
+        // masonry.layout();
+        //
+        // setMasonryRender(false);
+        //
+        // return () => {
+        //     masonry.destroy();
+        // };
+    }, [masonryRender]);
 
     if (!posts.length) {
         return (
@@ -54,45 +77,49 @@ const BlogIndex = ({
                         </p>
                     </Col>
                 </Row>
-                <Row data-masonry='{"percentPosition": true }'>
-                    {posts.map(post => {
-                        const title = post.title
-
-                        return (
-                            <Col sm={6}>
-                                <Card key={post.url} className="article-card">
-                                    {/* if we have a featured image for this post let's display it */}
-                                    {post.featuredImage ?
-                                        <Link to={post.uri}>
-                                            <GatsbyImage
-                                                image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
-                                                alt={post.featuredImage.node.alt ? post.featuredImage.node.alt : "Post Image"}
-                                                className="card-img-top" />
-                                        </Link>
-                                        :null
-                                    }
-                                    <div className="card-body">
-                                        <Link to={post.uri} className="no-underline-link">
-                                            <h5 className="card-title">{parse(title)}</h5>
-                                        </Link>
-                                        {parse(post.excerpt)}
-                                    </div>
-                                    <div className="card-footer">
-                                        <Row>
-                                            <Col>{post.date}</Col>
-                                        </Row>
-                                    </div>
-                                </Card>
-                            </Col>
-                        );
-                    })}
+                <Row className="grid" ref={masonryRef}>
+                    {posts.map(post => (
+                        <Col className="masonry-item" key={post.uri} sm={6}>
+                            <Card className="article-card">
+                                {/* if we have a featured image for this post let's display it */}
+                                {post.featuredImage ?
+                                    <Link to={post.uri}>
+                                        <GatsbyImage
+                                            image={post.featuredImage.node.localFile.childImageSharp.gatsbyImageData}
+                                            alt={post.featuredImage.node.alt ? post.featuredImage.node.alt : "Post Image"}
+                                            className="card-img-top" />
+                                    </Link>
+                                    :null
+                                }
+                                <div className="card-body">
+                                    <Link to={post.uri} className="no-underline-link">
+                                        <h5 className="card-title">{parse(post.title)}</h5>
+                                    </Link>
+                                    {parse(post.excerpt)}
+                                </div>
+                                <div className="card-footer">
+                                    <Row>
+                                        <Col>{post.date}</Col>
+                                    </Row>
+                                </div>
+                            </Card>
+                        </Col>
+                    ))}
                 </Row>
 
                 {previousPagePath != null|| nextPagePath != null ?
                     <Row>
                         <nav className="pagination justify-content-center" aria-label="Pagination">
-                            {previousPagePath && <li className="page-item"><Link className="page-link" to={previousPagePath}>Previous page</Link></li>}
-                            {nextPagePath && <li className="page-item"><Link className="page-link" to={nextPagePath}>Next page</Link></li>}
+                            {previousPagePath &&
+                                <li className="page-item" key="previous-page">
+                                    <Link className="page-link" to={previousPagePath}>Previous page</Link>
+                                </li>
+                            }
+                            {nextPagePath &&
+                                <li className="page-item" key="next-page">
+                                    <Link className="page-link" to={nextPagePath}>Next page</Link>
+                                </li>
+                            }
                         </nav>
                     </Row>
                     : null
@@ -106,15 +133,7 @@ const BlogIndex = ({
 export default BlogIndex
 
 export const Head = ({location, data}) => (
-    <>
-        <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={postOrPage} />
-        <Script
-            strategy="post-hydrate"
-            src="https://unpkg.com/masonry-layout@4.2.2/dist/masonry.pkgd.min.js"
-            integrity="sha384-GNFwBvfVxBkLMJpYMOABq3c+d3KnQxudP/mGPkzpZSTYykLBNsZEnG2D9G/X/+7D"
-            crossOrigin="anonymous"
-        />
-    </>
+    <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={postOrPage} />
 )
 
 export const pageQuery = graphql`query WordPressPostArchive($offset: Int!, $postsPerPage: Int!) {

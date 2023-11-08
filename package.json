@@ -24,10 +24,12 @@
     "gatsby-plugin-sitemap": "^6.12.3",
     "gatsby-source-wordpress": "^7.12.3",
     "gatsby-transformer-sharp": "^5.12.3",
+    "masonry-layout": "^4.2.2",
     "npm-check": "^6.0.1",
     "react": "^18.2.0",
     "react-bootstrap": "^2.9.1",
     "react-dom": "^18.2.0",
+    "react-spinkit": "^3.0.0",
     "sass": "^1.69.5"
   },
   "devDependencies": {

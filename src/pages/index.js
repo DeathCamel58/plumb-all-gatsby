@@ -1,5 +1,5 @@
 import React from "react"
-import { useStaticQuery, graphql } from "gatsby"
+import { graphql, Script } from "gatsby"
 
 import Layout from "../components/layout"
 import SEOPress from "../components/seo/SEOPress";
@@ -15,7 +15,17 @@ const PageTemplate = ({ data: { post: page }, location }) => {
 export default PageTemplate
 
 export const Head = ({location, data}) => (
-    <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={data.post} />
+    <>
+        <SEOPress props={`https://plumb-all.com${location.pathname}`} postOrPage={data.post} />
+        <Script
+            key="recaptcha-submitter"
+            strategy="post-hydrate"
+            src="/js/contact-form-submit.js"
+        />
+        <Script
+            key="recaptcha"
+            src="https://www.google.com/recaptcha/api.js?render=6LduBK0UAAAAAGHy00BaEEo_I-I78xmEhGL6xBpW" />
+    </>
 )
 
 export const pageQuery = graphql`query HomePage {
