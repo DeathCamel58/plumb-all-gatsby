@@ -47,9 +47,9 @@ const Footer = ({ isHomePage, children }) => {
                         <Row>
                             <Col>
                                 <div className="estimation">
-                                    <a className="button button-cyan button_big" href="tel:+18447586225">(844) PLUMB-ALL</a>
-                                    <p className="text_color-lilac"> Tel: <a className="text_color-cyan" href="tel:+18447586225">(844)
-                                        758-6225</a><br />
+                                    <a className="button button-cyan button_big" href="tel:+17709143877">(770) 914-3877</a>
+                                    <p className="text_color-lilac"> Tel: <a className="text_color-cyan" href="tel:+17709143877">(770)
+                                        914-3877</a><br />
                                         Email: <a className="text_color-cyan" href="mailto:info@plumb-all.com">info@plumb-all.com</a></p>
                                 </div>
                             </Col>
