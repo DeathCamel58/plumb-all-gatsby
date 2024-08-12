@@ -47,7 +47,7 @@ const Menu = ({ isHomePage, children }) => {
                         </Nav>
                     </Navbar.Collapse>
                     <div className="estimation">
-                        <a href="tel:+18447586225" className="button button-cyan">(844) PLUMB-ALL</a>
+                        <a href="tel:+17709143877" className="button button-cyan">(770) 914-3877</a>
                     </div>
                 </div>
             </Container>

@@ -15,7 +15,7 @@ const TwentyFourSeven = () => {
                         <Link to="/contact/" className="btn btn-primary">Contact Us!</Link>
                     </Col>
                     <Col className="text-end">
-                        <a href="tel:+18447586225" className="btn btn-primary">(844) 758-6225</a>
+                        <a href="tel:+17709143877" className="btn btn-primary">(770) 914-3877</a>
                     </Col>
                 </Row>
             </div>
